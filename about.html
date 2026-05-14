@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Joseph Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAFAF7;
+      --text: #1A1A1A;
+      --muted: #6E6E6A;
+      --accent: #74a662;
+      --rule: #E6E4DE;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Geist', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── HEADER ─── */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    nav {
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover { color: var(--accent); }
+    nav a.active { color: var(--accent); }
+
+    /* ─── ABOUT ─── */
+    .about {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 64px 120px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .about-headline {
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 36px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-image img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 860px) {
+      header { padding: 22px 28px; }
+      nav { gap: 24px; }
+      .about { padding: 48px 28px 80px; }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Joseph Kim</a>
+    <nav>
+      <a href="index.html#work">Work</a>
+      <a href="about.html" class="active">About</a>
+      <a href="https://www.linkedin.com/in/joseph-kim-8340a12a9/" target="_blank">LinkedIn</a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <h1 class="about-headline">From Sneakers To Design</h1>
+        <p>I'm a UX designer who transitioned from managing in the sneaker industry, where I spent years leading teams, understanding customer behavior, and delivering high-impact retail experiences. Working on the front lines taught me how people make decisions, what motivates them, and where frustration lives — insights that naturally led me to UX design.</p>
+        <p>Now, I apply that people-first mindset to designing intuitive, thoughtful digital experiences. I'm driven by curiosity, empathy, and the challenge of turning complex problems into simple, meaningful solutions that genuinely improve users' lives.</p>
+      </div>
+      <div class="about-image">
+        <img src="about-photo.jpg" alt="Joseph Kim">
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
