@@ -164,12 +164,22 @@
     }
 
     .slide-phones img {
-      height: 100%;
+      height: 78%;
       width: auto;
       border-radius: 40px;
       object-fit: cover;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
     }
+
+    /* Per-slide backgrounds */
+    .slide--dark  { background: #1A1C2E; }
+    .slide--light { background: #FFFFFF; }
+
+    .slide--dark .slide-meta {
+      background: linear-gradient(to bottom, transparent, rgba(26,28,46,0.97));
+    }
+    .slide--dark .slide-name { color: #FFFFFF; }
+    .slide--dark .slide-tag  { color: rgba(255,255,255,0.55); }
 
     /* Laptop slides */
     .slide-laptop {
@@ -504,7 +514,7 @@
         <div class="carousel" id="hero-carousel">
 
       <!-- Slide 1: DiamondPassport — Stadium Tracker -->
-      <div class="slide active">
+      <div class="slide slide--dark active">
         <div class="slide-phones">
           <img src="dp-list.png" alt="DiamondPassport stadium list">
           <img src="dp-map.png" alt="DiamondPassport map view">
@@ -516,7 +526,7 @@
       </div>
 
       <!-- Slide 2: DiamondPassport — Visit Experience -->
-      <div class="slide">
+      <div class="slide slide--dark">
         <div class="slide-phones">
           <img src="dp-stadium.png" alt="DiamondPassport stadium detail">
           <img src="dp-visit.png" alt="DiamondPassport visit details">
@@ -528,7 +538,7 @@
       </div>
 
       <!-- Slide 3: SoleSeattle -->
-      <div class="slide">
+      <div class="slide slide--light">
         <div class="slide-laptop">
           <img src="sole-laptop.png" alt="SoleSeattle eCommerce redesign">
         </div>
@@ -539,7 +549,7 @@
       </div>
 
       <!-- Slide 4: Netflix Watch Party -->
-      <div class="slide">
+      <div class="slide slide--light">
         <div class="slide-laptop">
           <img src="netflix-laptop.png" alt="Netflix Watch Party feature design">
         </div>
