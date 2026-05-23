@@ -106,8 +106,8 @@
     .slide-deck { background: #FAFAF7; border-radius: 12px; overflow: hidden; margin: 32px 0; }
     .slide { display: none; }
     .slide.active { display: block; }
-    .slide-img { background: #FAFAF7; min-height: 260px; overflow: hidden; }
-    .slide-img img { width: 100%; height: auto; display: block; mix-blend-mode: multiply; }
+    .slide-img { background: #FAFAF7; overflow: hidden; display: flex; justify-content: center; }
+    .slide-img img { max-height: 420px; width: auto; max-width: 100%; display: block; mix-blend-mode: multiply; }
     .slide-footer { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-top: 1px solid rgba(0,0,0,0.07); }
     .slide-cap { font-size: 12px; color: var(--muted); flex: 1; padding-right: 16px; }
     .slide-nav { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
