@@ -102,6 +102,20 @@
     .footer-cta { font-size: 14px; font-weight: 500; color: var(--text); border-bottom: 1.5px solid var(--text); padding-bottom: 3px; transition: color 0.2s, border-color 0.2s; }
     .footer-cta:hover { color: var(--accent); border-color: var(--accent); }
 
+    /* SLIDE DECK */
+    .slide-deck { background: #FAFAF7; border-radius: 12px; overflow: hidden; margin: 32px 0; }
+    .slide { display: none; }
+    .slide.active { display: block; }
+    .slide-img { background: #FAFAF7; min-height: 260px; overflow: hidden; }
+    .slide-img img { width: 100%; height: auto; display: block; mix-blend-mode: multiply; }
+    .slide-footer { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-top: 1px solid rgba(0,0,0,0.07); }
+    .slide-cap { font-size: 12px; color: var(--muted); flex: 1; padding-right: 16px; }
+    .slide-nav { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .slide-btn { background: none; border: 1.5px solid #D4D0C8; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-size: 14px; color: var(--text); transition: border-color 0.2s; display: flex; align-items: center; justify-content: center; }
+    .slide-btn:hover:not(:disabled) { border-color: var(--text); }
+    .slide-btn:disabled { opacity: 0.3; cursor: default; }
+    .slide-count { font-size: 12px; color: var(--muted); min-width: 36px; text-align: center; }
+
     @media (max-width: 768px) {
       header { padding: 20px 24px; }
       .case-hero { padding: 64px 24px 48px; }
@@ -198,6 +212,32 @@
 
     <div class="callout">
       <p>The physical passport can be lost, offers no real-time data, has no social connectivity, and can't be updated. It's a beautiful artifact — but a terrible product.</p>
+    </div>
+
+    <div class="slide-deck">
+      <div class="slide active">
+        <div class="slide-img"><img src="research-1.png" alt="The physical MLB BallPark Pass-Port" onerror="this.style.opacity=0"></div>
+      </div>
+      <div class="slide">
+        <div class="slide-img"><img src="research-2.png" alt="Gameday facts and memories spread" onerror="this.style.opacity=0"></div>
+      </div>
+      <div class="slide">
+        <div class="slide-img"><img src="research-3.png" alt="Stadium info and seating map spread" onerror="this.style.opacity=0"></div>
+      </div>
+      <div class="slide">
+        <div class="slide-img"><img src="research-4.png" alt="Seat location stamps insert" onerror="this.style.opacity=0"></div>
+      </div>
+      <div class="slide">
+        <div class="slide-img"><img src="research-5.png" alt="Full foldout stadium map" onerror="this.style.opacity=0"></div>
+      </div>
+      <div class="slide-footer">
+        <span class="slide-cap"></span>
+        <div class="slide-nav">
+          <button class="slide-btn slide-prev" aria-label="Previous">&#8592;</button>
+          <span class="slide-count">1 / 5</span>
+          <button class="slide-btn slide-next" aria-label="Next">&#8594;</button>
+        </div>
+      </div>
     </div>
 
     <div class="section-body">
@@ -470,5 +510,35 @@
   <a href="index.html" class="footer-cta">← Back to all work</a>
 </footer>
 
+  <script>
+    // Research slide deck
+    document.querySelectorAll('.slide-deck').forEach(function(deck) {
+      var slides = deck.querySelectorAll('.slide');
+      var countEl = deck.querySelector('.slide-count');
+      var capEl = deck.querySelector('.slide-cap');
+      var prevBtn = deck.querySelector('.slide-prev');
+      var nextBtn = deck.querySelector('.slide-next');
+      var captions = [
+        'The physical MLB BallPark Pass-Port — a leather-bound collector's book',
+        'Per-game spreads: scorecard, pitcher stats, and a memories journal',
+        'Each stadium gets two pages — history, a stamp, and a seating chart',
+        '"I Sat Here" sticker inserts to mark your exact seat location',
+        'A full foldout US map showing all 30 MLB stadiums'
+      ];
+      var cur = 0;
+      function go(n) {
+        slides[cur].classList.remove('active');
+        cur = n;
+        slides[cur].classList.add('active');
+        if (countEl) countEl.textContent = (cur + 1) + ' / ' + slides.length;
+        if (capEl) capEl.textContent = captions[cur] || '';
+        if (prevBtn) prevBtn.disabled = cur === 0;
+        if (nextBtn) nextBtn.disabled = cur === slides.length - 1;
+      }
+      if (prevBtn) prevBtn.addEventListener('click', function() { if (cur > 0) go(cur - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function() { if (cur < slides.length - 1) go(cur + 1); });
+      go(0);
+    });
+  </script>
 </body>
 </html>
