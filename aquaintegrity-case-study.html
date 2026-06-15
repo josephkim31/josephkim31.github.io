@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5TWD0CYMD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H5TWD0CYMD');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aqua Integrity Pool Services — Joseph Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FAFAF7;
+      --text: #1A1A1A;
+      --muted: #6E6E6A;
+      --accent: #1A6BB0;
+      --rule: #E6E4DE;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Geist', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+    nav { display: flex; gap: 40px; }
+    nav a { font-size: 14px; color: var(--text); transition: color 0.2s; }
+    nav a:hover { color: var(--accent); }
+
+    /* HERO */
+    .case-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 96px 64px 80px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 48px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+    .case-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .case-title {
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+    .case-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      padding-top: 40px;
+      border-top: 1px solid var(--rule);
+    }
+    .meta-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .meta-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* CONTENT */
+    .case-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 64px 120px;
+    }
+    .section { margin-bottom: 96px; }
+    .section-tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .section-body {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 680px;
+    }
+    .section-body p { margin-bottom: 16px; }
+    .section-body p:last-child { margin-bottom: 0; }
+
+    /* IMAGES */
+    .img-full {
+      width: 100%;
+      border-radius: 8px;
+      margin: 32px 0;
+      display: block;
+      border: 1px solid var(--rule);
+    }
+    .img-caption {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: -20px;
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+
+    /* BRAND PALETTE */
+    .brand-block {
+      margin: 40px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+    }
+    .brand-header {
+      background: #0B4F8A;
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand-header-text h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.01em;
+    }
+    .brand-header-text p {
+      font-size: 12px;
+      color: #F0C855;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .brand-tagline {
+      background: #0B4F8A;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 20px 36px;
+      font-size: 20px;
+      font-style: italic;
+      color: white;
+      letter-spacing: -0.01em;
+    }
+    .brand-tagline span { color: #F0C855; }
+    .brand-colors {
+      background: white;
+      padding: 28px 36px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      min-width: 80px;
+    }
+    .swatch-block {
+      height: 48px;
+      border-radius: 6px;
+    }
+    .swatch-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .swatch-hex {
+      font-size: 10px;
+      color: var(--muted);
+      font-family: monospace;
+    }
+    .brand-type {
+      background: #F0F7FF;
+      padding: 28px 36px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      gap: 40px;
+    }
+    .type-sample { flex: 1; }
+    .type-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* REFERRAL SYSTEM */
+    .system-steps {
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .step {
+      display: flex;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      flex: 0 0 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .step-content {}
+    .step-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .step-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* FORMS CALLOUT */
+    .forms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .form-card {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .form-card-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .form-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .form-card-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* REFLECTION */
+    .reflection-box {
+      background: #0B4F8A;
+      border-radius: 12px;
+      padding: 48px;
+      margin: 40px 0;
+    }
+    .reflection-box p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      max-width: 600px;
+    }
+    .reflection-box p strong {
+      color: #F0C855;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    .case-footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 64px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .case-footer p { font-size: 13px; color: var(--muted); }
+    .footer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      border: 1px solid var(--rule);
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .footer-cta:hover { color: var(--accent); border-color: var(--accent); }
+
+    @media (max-width: 768px) {
+      header { padding: 20px 24px; }
+      .case-hero, .case-content { padding-left: 24px; padding-right: 24px; }
+      .case-meta { grid-template-columns: 1fr 1fr; }
+      .brand-type { flex-direction: column; }
+      .forms-grid { grid-template-columns: 1fr; }
+      .case-footer { padding: 40px 24px; flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Joseph Kim</a>
+  <nav>
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="resume.pdf" target="_blank">Resume</a>
+  </nav>
+</header>
+
+<div class="case-hero">
+  <a href="index.html" class="back-link">← Back to work</a>
+  <p class="case-label">Freelance Web Design</p>
+  <h1 class="case-title">Aqua Integrity Pool Services</h1>
+  <p class="case-subtitle">Building a business from zero digital presence — brand identity, website, and a custom lead-tracking system for a San Diego pool service company.</p>
+  <div class="case-meta">
+    <div class="meta-item">
+      <p class="meta-label">Client</p>
+      <p class="meta-value">Aqua Integrity Pool Services</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Role</p>
+      <p class="meta-value">Solo Designer — UX, Visual Design, Client Management</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Tools</p>
+      <p class="meta-value">Squarespace, Jotform, QR Code Generation</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Year</p>
+      <p class="meta-value">2025</p>
+    </div>
+  </div>
+</div>
+
+<div class="case-content">
+
+  <img src="aqua-laptop.png" alt="Aqua Integrity Pool Services website on a laptop" class="img-full" style="mix-blend-mode:multiply;">
+
+  <!-- THE STORY -->
+  <div class="section">
+    <p class="section-tag">Background</p>
+    <h2 class="section-title">A new business owner with no digital presence.</h2>
+    <div class="section-body">
+      <p>When my client purchased an existing pool cleaning business, he had the drive, the team, and the expertise to make it work. What he didn't have was a digital presence. No website, no way for potential customers to find him, and no system for tracking where his leads were coming from.</p>
+      <p>He came to me with a vision — mockup ideas and a clear list of features he needed. My job was to take that vision and build something that looked professional, worked seamlessly, and set his business up to grow from day one.</p>
+    </div>
+  </div>
+
+  <!-- MY ROLE -->
+  <div class="section">
+    <p class="section-tag">My Role</p>
+    <h2 class="section-title">End-to-end ownership. No handoffs.</h2>
+    <div class="section-body">
+      <p>I worked as the sole designer and builder on this project, handling everything from visual design and branding to form logic, QR code setup, and client communication. There was no handoff between a designer and a developer. I owned the full process from start to finish.</p>
+    </div>
+  </div>
+
+  <!-- THE DESIGN -->
+  <div class="section">
+    <p class="section-tag">Visual Design</p>
+    <h2 class="section-title">Building a brand identity from the ground up.</h2>
+    <div class="section-body">
+      <p>The client didn't come in with an established brand, so I developed the visual identity from scratch. I chose a blue and gold color palette with intention. Blue is the natural anchor for a pool company — evoking water and cleanliness. Gold was a deliberate nod to the owner's personal commitment to a gold standard of service.</p>
+      <p>The two colors together communicate trust and quality without needing to say it outright. The site was built on Squarespace to give the client a platform he could manage long-term without relying on a developer for every update.</p>
+    </div>
+
+    <div class="brand-block">
+      <div class="brand-header">
+        <div class="brand-header-text">
+          <h3>Aqua Integrity</h3>
+          <p>Pool Services LLC &nbsp;·&nbsp; Brand Guidelines v1.0</p>
+        </div>
+      </div>
+      <div class="brand-tagline"><span>"Your pool. Our integrity."</span></div>
+      <div class="brand-colors">
+        <div class="swatch">
+          <div class="swatch-block" style="background:#0B4F8A;"></div>
+          <div class="swatch-name">Deep Navy</div>
+          <div class="swatch-hex">#0B4F8A</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#1A6BB0;"></div>
+          <div class="swatch-name">Brand Blue</div>
+          <div class="swatch-hex">#1A6BB0</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#2A8DD4;"></div>
+          <div class="swatch-name">Sky Blue</div>
+          <div class="swatch-hex">#2A8DD4</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#C4A035;"></div>
+          <div class="swatch-name">Gold</div>
+          <div class="swatch-hex">#C4A035</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#F0C855;"></div>
+          <div class="swatch-name">Light Gold</div>
+          <div class="swatch-hex">#F0C855</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#F0F7FF; border:1px solid #dce8f5;"></div>
+          <div class="swatch-name">Ice White</div>
+          <div class="swatch-hex">#F0F7FF</div>
+        </div>
+      </div>
+      <div class="brand-type">
+        <div class="type-sample">
+          <p class="type-label">Playfair Display — Headlines &amp; Display</p>
+          <div style="font-family:Georgia,serif;font-size:28px;font-weight:700;color:#0B4F8A;line-height:1.1;">Crystal-clear pools,<br>every single week.</div>
+        </div>
+        <div class="type-sample">
+          <p class="type-label">Montserrat — Body &amp; UI</p>
+          <div style="font-size:14px;color:#5A6A7A;line-height:1.75;max-width:300px;">Professional weekly maintenance, honest chemistry reporting, and a technician who shows up on time — every time.</div>
+        </div>
+      </div>
+    </div>
+
+    <img src="aqua-hero.png" alt="Aqua Integrity homepage design" class="img-full">
+    <p class="img-caption">Final homepage — blue and gold palette applied across hero, navigation, and CTAs</p>
+  </div>
+
+  <!-- REFERRAL SYSTEM -->
+  <div class="section">
+    <p class="section-tag">The Referral System</p>
+    <h2 class="section-title">Building a lead tracking system from scratch.</h2>
+    <div class="section-body">
+      <p>The most technically interesting part of this project was the lead tracking and technician referral system. The owner had a specific need: he wanted to know exactly where every new lead came from, down to which technician brought it in. For a small service business growing through word of mouth, that paper trail matters.</p>
+    </div>
+
+    <div class="system-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <p class="step-title">Unique QR codes per technician</p>
+          <p class="step-desc">Each technician has a unique QR code printed on the company trucks and business cards. The code ties every scan directly to that technician.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <p class="step-title">Dedicated form per technician</p>
+          <p class="step-desc">Scanning the code takes the customer directly to that technician's form. The submission is tied to that technician — the owner always knows who generated the lead.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <p class="step-title">Routes directly to the owner's email</p>
+          <p class="step-desc">Every form submission routes directly to the owner so he can follow up quickly and start onboarding. No leads fall through the cracks.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="forms-grid">
+      <div class="form-card">
+        <p class="form-card-label">Form Type 01</p>
+        <p class="form-card-title">Quick Inquiry</p>
+        <p class="form-card-desc">A 4-question form covering name, phone, address, and service type. Low friction, designed to capture interest fast.</p>
+      </div>
+      <div class="form-card">
+        <p class="form-card-label">Form Type 02</p>
+        <p class="form-card-title">Detailed Questionnaire</p>
+        <p class="form-card-desc">A 4-page form digging into pool size, type, condition, and specs — everything the owner needs to properly scope and price the job.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE RESULT -->
+  <div class="section">
+    <p class="section-tag">Result</p>
+    <h2 class="section-title">Live, operational, and in use across the team.</h2>
+    <div class="section-body">
+      <p>The site launched on schedule. The client was happy with both the design and the functionality. The referral tracking system is live and in use across the team's trucks and business cards, giving the owner a clear view of where his business is coming from.</p>
+      <p>You can view the live site at <a href="https://aquaintegritypoolservices.com" target="_blank" style="color:var(--accent);text-decoration:underline;">aquaintegritypoolservices.com</a>.</p>
+    </div>
+  </div>
+
+  <!-- REFLECTION -->
+  <div class="section">
+    <p class="section-tag">Takeaway</p>
+    <h2 class="section-title">What this project showed me.</h2>
+    <div class="reflection-box">
+      <p>Working directly with a client who had a real business, real technicians, and real operational needs was different from a classroom project. The design decisions had weight. The form logic had to actually work. And the client had to be able to understand and trust everything I handed him.<br><br><strong>Good design isn't just about how something looks.</strong> It's about whether it solves the right problem in a way that's simple enough for real people to use every day.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="case-footer">
+  <p>Aqua Integrity Pool Services — Joseph Kim, 2025</p>
+  <a href="index.html" class="footer-cta">← Back to all work</a>
+</div>
+
+</body>
+</html>
