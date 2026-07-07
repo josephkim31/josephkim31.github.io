@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parry — Email Notification</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --ink:#10151f;
+    --slate-700:#3a4659;
+    --slate-400:#7b8aa1;
+    --paper:#eef0f4;
+    --paper-2:#ffffff;
+    --line:#dde1e8;
+    --cobalt:#2f4ff0;
+    --cobalt-soft:#e7ebff;
+    --sage:#2f8f63;
+    --sage-soft:#e6f3ec;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'IBM Plex Sans', sans-serif;
+    background:#dde2e8;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    padding:40px 16px;
+  }
+
+  .inbox-shell{
+    max-width:560px;
+    margin:0 auto;
+  }
+  .inbox-meta{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:0 4px 12px;
+    font-size:12.5px; color:var(--slate-400);
+  }
+  .inbox-meta strong{ color:var(--slate-700); }
+
+  .email-card{
+    background:var(--paper-2);
+    border-radius:14px;
+    box-shadow:0 1px 2px rgba(16,21,31,.06), 0 8px 24px rgba(16,21,31,.08);
+    overflow:hidden;
+  }
+  .email-head{
+    display:flex; align-items:center; gap:10px;
+    padding:18px 24px;
+    border-bottom:1px solid var(--line);
+  }
+  .sender-avatar{
+    width:34px; height:34px; border-radius:50%;
+    background:var(--ink); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .sender-avatar svg{ width:16px; height:16px; }
+  .sender-info{ flex:1; min-width:0; }
+  .sender-name{ font-size:13.5px; font-weight:600; color:var(--ink); }
+  .sender-email{ font-size:12px; color:var(--slate-400); }
+  .sender-time{ font-size:12px; color:var(--slate-400); flex-shrink:0; }
+
+  .email-body{ padding:32px 32px 8px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; color:var(--slate-400);
+    letter-spacing:.04em; margin-bottom:10px;
+  }
+  .email-title{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600; font-size:22px; line-height:1.3;
+    color:var(--ink); margin:0 0 16px;
+  }
+  .ai-panel{
+    background:var(--paper);
+    border-radius:12px;
+    padding:18px 20px;
+    margin-bottom:20px;
+  }
+  .ai-panel-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--cobalt); margin-bottom:8px;
+  }
+  .ai-panel p{ font-size:15px; line-height:1.55; color:var(--slate-700); margin:0; }
+  .strength-pill{
+    display:inline-flex; align-items:center;
+    font-size:12.5px; font-weight:600;
+    padding:4px 11px; border-radius:14px;
+    background:var(--sage-soft); color:var(--sage);
+    margin-top:12px;
+  }
+  .deadline-line{
+    font-size:14.5px; color:var(--slate-700);
+    margin:0 0 26px;
+  }
+  .deadline-line strong{ color:var(--ink); }
+
+  .cta-btn{
+    display:inline-block;
+    background:var(--ink); color:#fff;
+    font-size:14.5px; font-weight:600;
+    text-decoration:none;
+    padding:13px 26px; border-radius:10px;
+    margin-bottom:30px;
+  }
+
+  .email-footer{
+    border-top:1px solid var(--line);
+    padding:18px 32px 26px;
+    font-size:12px; color:var(--slate-400); line-height:1.6;
+  }
+  .email-footer a{ color:var(--slate-400); text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="inbox-shell">
+  <div class="inbox-meta">
+    <span>Inbox</span>
+    <span><strong>2 minutes ago</strong></span>
+  </div>
+
+  <div class="email-card">
+    <div class="email-head">
+      <div class="sender-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="sender-info">
+        <div class="sender-name">Parry</div>
+        <div class="sender-email">notifications@useparry.com</div>
+      </div>
+      <div class="sender-time">2:14 PM</div>
+    </div>
+
+    <div class="email-body">
+      <div class="eyebrow">DSP-2291 · Visa 13.1</div>
+      <h1 class="email-title">A customer disputed your Heavyweight Hoodie order ($89)</h1>
+
+      <div class="ai-panel">
+        <div class="ai-panel-label">Our quick read</div>
+        <p>This was filed as item not received. You have signed delivery confirmation, tracking, and the original order receipt on file — based on that, this looks like a strong case.</p>
+        <span class="strength-pill">Strong case</span>
+      </div>
+
+      <p class="deadline-line">You have <strong>6 days</strong> to respond before this dispute is automatically decided.</p>
+
+      <a href="#" class="cta-btn">Review in Parry →</a>
+    </div>
+
+    <div class="email-footer">
+      You're receiving this because you have an active Parry account for order disputes.<br>
+      <a href="#">Manage notification preferences</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
