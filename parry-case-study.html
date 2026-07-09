@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5TWD0CYMD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H5TWD0CYMD');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parry · Joseph Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FAFAF7;
+      --text: #1A1A1A;
+      --muted: #6E6E6A;
+      --accent: #5B4FE5;
+      --rule: #E6E4DE;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Geist', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+    nav { display: flex; gap: 40px; }
+    nav a { font-size: 14px; color: var(--text); transition: color 0.2s; }
+    nav a:hover { color: var(--accent); }
+
+    /* HERO */
+    .case-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 96px 64px 80px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 48px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+    .case-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .case-title {
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+    .case-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      padding-top: 40px;
+      border-top: 1px solid var(--rule);
+    }
+    .meta-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .meta-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* CONTENT */
+    .case-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 64px 120px;
+    }
+    .section { margin-bottom: 96px; }
+    .section-tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .section-body {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 680px;
+    }
+    .section-body p { margin-bottom: 16px; }
+    .section-body p:last-child { margin-bottom: 0; }
+
+    /* IMAGES */
+    .img-full {
+      width: 100%;
+      border-radius: 8px;
+      margin: 32px 0;
+      display: block;
+      border: 1px solid var(--rule);
+    }
+
+    /* FOOTER */
+    .case-footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 64px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .case-footer p { font-size: 13px; color: var(--muted); }
+    .footer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      border: 1px solid var(--rule);
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .footer-cta:hover { color: var(--accent); border-color: var(--accent); }
+
+    @media (max-width: 768px) {
+      header { padding: 20px 24px; }
+      .case-hero, .case-content { padding-left: 24px; padding-right: 24px; }
+      .case-meta { grid-template-columns: 1fr 1fr; }
+      .case-footer { padding: 40px 24px; flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Joseph Kim</a>
+  <nav>
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="resume.pdf" target="_blank">Resume</a>
+  </nav>
+</header>
+
+<div class="case-hero">
+  <a href="index.html" class="back-link">← Back to work</a>
+  <p class="case-label">Fintech · Product Design · AI</p>
+  <h1 class="case-title">Parry</h1>
+  <p class="case-subtitle">An AI-powered dispute coach that helps businesses understand chargebacks and fight them with the right evidence, before the clock runs out.</p>
+  <div class="case-meta">
+    <div class="meta-item">
+      <p class="meta-label">Project Type</p>
+      <p class="meta-value">Self-Directed Concept</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Role</p>
+      <p class="meta-value">Solo Designer, End-to-End Product Design</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Tools</p>
+      <p class="meta-value">Figma, HTML/CSS/JS Prototyping</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Year</p>
+      <p class="meta-value">2026</p>
+    </div>
+  </div>
+</div>
+
+<div class="case-content">
+
+  <img src="parry-hero.png" alt="Parry dispute coach dashboard on a laptop" class="img-full" style="border:none;">
+
+  <!-- BACKGROUND -->
+  <div class="section">
+    <p class="section-tag">Background</p>
+    <h2 class="section-title">A dispute you don't understand is a dispute you lose.</h2>
+    <div class="section-body">
+      <p>Chargebacks hit businesses of every size. A small shop and a large corporation can both lose the exact same case, for the exact same reason: they didn't understand what was actually being disputed, or what evidence the bank needed to see.</p>
+      <p>I saw this firsthand as a manager at a small business. Losing a chargeback rarely came down to being in the wrong. It came down to not knowing what a reason code meant, what counted as proof, or how many days were left to respond. By the time it was clear, it was often too late.</p>
+      <p>Parry exists to close that gap: translating dispute codes and evidence requirements into plain language, so businesses can actually fight back instead of losing by default.</p>
+    </div>
+  </div>
+
+  <!-- THE PROBLEM -->
+  <div class="section">
+    <p class="section-tag">The Problem</p>
+    <h2 class="section-title">Every dispute has a code. Almost nobody knows what it means.</h2>
+    <div class="section-body">
+      <p>Each chargeback arrives with a reason code, and Visa and Mastercard each run their own system. Code 4853 might mean the cardholder disputed the service. Code 4837 means the transaction wasn't authorized in the first place. The evidence a merchant needs depends entirely on which code they're looking at: an "item not received" dispute needs proof of delivery, a fraud dispute needs the IP address and device data behind the transaction. Most small merchants have never seen these codes before the day one lands in their inbox.</p>
+      <p>The clock makes it worse. Card networks typically give 20 to 45 days to respond, but the acquiring bank can shrink that window internally to as little as 5 to 10 days. Miss it, and the merchant loses automatically, no matter how strong the case actually was.</p>
+      <p>What makes this especially frustrating: more than half of all chargebacks are reportedly "friendly fraud," disputes filed for illegitimate reasons. A large share of merchants are sitting on winnable cases and simply don't know it.</p>
+    </div>
+  </div>
+
+  <!-- THE APPROACH -->
+  <div class="section">
+    <p class="section-tag">The Approach</p>
+    <h2 class="section-title">A payments problem, not a credit problem.</h2>
+    <div class="section-body">
+      <p>I wanted this project to sit specifically in payments operations, the world of Stripe, Square, Block, and Toast, rather than lending or credit. Disputes are a different kind of problem: the money has already changed hands, and the business is fighting to keep it rather than trying to get approved for it in the first place. That distinction matters. It's a different moment of anxiety, a different set of stakes, and a different kind of user, one who's often already stressed about cash flow and doesn't have the time to become an expert in chargeback rules overnight.</p>
+      <p>Parry is built for that person, whether they're running a single storefront or managing disputes across a larger operation. The goal was never to replace a merchant's judgment. It was to give them, in plain language, the same read on a case that a seasoned chargeback specialist would give: what's actually being disputed, how strong the case looks, and what to submit before the window closes.</p>
+    </div>
+  </div>
+
+  <!-- KEY SCREEN: DASHBOARD -->
+  <div class="section">
+    <p class="section-tag">Key Screen</p>
+    <h2 class="section-title">Every case, sorted by how much time is left.</h2>
+    <div class="section-body">
+      <p>The dashboard is the merchant's home base: every open dispute in one list, filterable by status (Needs response, Submitted, Resolved), with the two things that actually matter surfaced immediately: how much time is left, and how much money is on the line. A color-coded ring around each case, red, orange, or green, gives an at-a-glance read on urgency before the merchant even opens it. Given how much a missed deadline costs, time remaining had to outrank everything else in the visual hierarchy, including the dollar amount.</p>
+      <p>Selecting a case opens Parry's read on it: what the dispute actually is, how strong the case looks, and the specific evidence needed to fight it, the same translation work a chargeback specialist would normally do by hand.</p>
+    </div>
+  </div>
+
+  <!-- KEY SCREEN: EMAIL -->
+  <div class="section">
+    <p class="section-tag">Key Screen</p>
+    <h2 class="section-title">Meeting merchants where they already are: their inbox.</h2>
+    <div class="section-body">
+      <p>Not every merchant logs into a dashboard the moment a dispute lands. Most find out through an email from their processor, one of those legalese notices that reads more like a court summons than something you can act on. Parry's notification is designed to replace that moment of dread with an immediate, plain-language answer.</p>
+      <p>The email leads with the specifics: the case ID, the card, and what was actually disputed, in this case an order marked "item not received." Below that sits Parry's "Quick Read": a short AI summary of the situation and, just as important, a confidence signal. A green "Strong case" badge tells the merchant in half a second whether this is worth fighting, something a raw reason code and a wall of policy text could never do. The response deadline is stated plainly in days, not a date, since "6 days" creates more urgency than a calendar date ever could. A single CTA sends them straight into Parry to act on it.</p>
+    </div>
+
+    <img src="parry-email-hero.png" alt="Parry dispute email notification on a laptop" class="img-full" style="border:none;">
+  </div>
+
+  <!-- OUTCOME -->
+  <div class="section">
+    <p class="section-tag">Where It Stands</p>
+    <h2 class="section-title">A concept prototype, built to explore a real gap.</h2>
+    <div class="section-body">
+      <p>Parry is a self-directed concept, not a shipped product. I built it to explore a problem space I understood personally, and to stretch my range into payments operations, a different set of stakes and constraints than the lending and credit work I've done elsewhere.</p>
+    </div>
+  </div>
+
+  <!-- TAKEAWAY -->
+  <div class="section">
+    <p class="section-tag">Takeaway</p>
+    <h2 class="section-title">Clarity is the feature.</h2>
+    <div class="section-body">
+      <p>The hardest part of this project wasn't the interface. It was figuring out what to leave out. A merchant staring down a chargeback doesn't need every field the reason code could theoretically touch. They need to know three things fast: what happened, how strong their case is, and what to do next.</p>
+      <p><strong>Good design in a high-stakes moment isn't about showing your work.</strong> It's about making the right decision obvious, even when the underlying problem is genuinely complicated.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="case-footer">
+  <p>Parry · Joseph Kim, 2026</p>
+  <a href="index.html" class="footer-cta">← Back to all work</a>
+</div>
+
+</body>
+</html>
