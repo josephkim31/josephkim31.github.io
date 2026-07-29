@@ -224,6 +224,110 @@
       max-width: 620px;
     }
 
+    /* PERSONA GRID */
+    .persona-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .persona-card {
+      background: #F1EFE9;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .persona-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .persona-tag {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      background: rgba(210, 105, 30, 0.1);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .persona-card p {
+      margin-top: 14px;
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ROUND CALLOUT */
+    .round-callout {
+      border: 1.5px solid rgba(210, 105, 30, 0.35);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 32px 0;
+    }
+    .round-callout-head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .round-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .round-n {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .round-callout > p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .stat-grid-bordered {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+    }
+    .stat-card-bordered {
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 18px 14px;
+      text-align: center;
+    }
+    .stat-card-bordered .stat-num { font-size: 26px; }
+    .stat-card-bordered .stat-lbl { margin-top: 8px; }
+
+    /* REASONS CALLOUT */
+    .reasons-callout {
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 32px 0;
+      background: #F1EFE9;
+    }
+    .reasons-callout p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .reasons-callout ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .reasons-callout li { margin-bottom: 8px; }
+    .reasons-callout li:last-child { margin-bottom: 0; }
+
     /* FOOTER */
     .case-footer {
       max-width: 900px;
@@ -309,6 +413,63 @@
       <p>I've always enjoyed draft-and-guess basketball games, the kind where you pull a random real team and see how far you can take it. 82-0.com is the one I kept coming back to, until I noticed the same handful of teams and eras kept showing up over and over, undermining the entire premise of a "random draft" game. So I built my own version and shipped it: iknowball (a play on the modern term), a web game where players draft a 5-man NBA roster one position at a time, pulling from randomly rolled real teams across six decades, then get scored on how that roster would actually perform across an 82-game season.</p>
       <p>That founding complaint has now come back around twice. The first time, it turned out iknowball had quietly reintroduced the exact repetition problem it was built to fix: teams rotated correctly across games, but decades didn't. The second time, it came from an entirely new, much larger source: a 20-person playtest run by a hoop group who actually know the fantasy-draft genre. They found a narrower version of the same bug, the same team landing on the same decade again almost immediately, even after the first fix had already shipped.</p>
       <p>This update folds that 20-person round into the original research, and adds everything shipped since: a full rating-accuracy audit (fixing the "decade dilution" pattern this document's earlier draft hadn't yet named), a deliberate one-off rating override, a full restructure of the tier-rating scale, and the second, deeper fix to team/decade repetition. Everything below is organized the way the work actually happened: research first, then cross-cutting findings, then a section-by-section account of what shipped, reverted, or is still on the roadmap, with the real numbers behind each call.</p>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="section">
+    <p class="section-tag">Research</p>
+    <h2 class="section-title">Who I Talked To</h2>
+    <div class="section-body">
+      <p>Two rounds: four unmoderated deep-dive sessions spanning basketball knowledge levels, then a 20-person structured playtest with people who actually play fantasy-style basketball games for fun.</p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-name">Maddy</div>
+        <div class="persona-tag">No basketball knowledge</div>
+        <p>Picks by stats and nicknames since she can't evaluate players on reputation. First to flag that stats were hard to see, and that the "draft this team" click felt repetitive round after round.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-name">Arnold</div>
+        <div class="persona-tag">Casual knowledge</div>
+        <p>Got visibly stuck. Couldn't tell the team roll was interactive, and didn't realize there was randomization happening until his second spin. The most detailed source on what the interface fails to communicate.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-name">Justin</div>
+        <div class="persona-tag">Real basketball knowledge</div>
+        <p>Evaluated players by role and position need, not just stats, and didn't even notice stats were on the cards at first. Most invested in the scoring model actually making sense.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-name">Nicky</div>
+        <div class="persona-tag">Follow-up round</div>
+        <p>Came back after the first wave of fixes shipped. Focused almost entirely on the scoring model's realism and the team/decade repetition, the founding complaint reappearing independently.</p>
+      </div>
+    </div>
+
+    <div class="round-callout">
+      <div class="round-callout-head">
+        <span class="round-name">Round 3: Kevin + hoop group</span>
+        <span class="round-n">n = 20</span>
+      </div>
+      <p>A structured playtest run by Kevin with a group of ~20 people who actively play fantasy-basketball-style games, including 82-0 itself. This is the first round with real quantitative data instead of individual field notes, and the first time iknowball was tested head-to-head against the named competitor.</p>
+      <div class="stat-grid-bordered">
+        <div class="stat-card-bordered"><div class="stat-num">15/20</div><div class="stat-lbl">Understood the mechanics after 1 round</div></div>
+        <div class="stat-card-bordered"><div class="stat-num">20/20</div><div class="stat-lbl">Understood the mechanics by round 3</div></div>
+        <div class="stat-card-bordered"><div class="stat-num">20/20</div><div class="stat-lbl">Enjoyed the end-of-round score explanation</div></div>
+        <div class="stat-card-bordered"><div class="stat-num">10/20</div><div class="stat-lbl">Had played 82-0 before</div></div>
+        <div class="stat-card-bordered"><div class="stat-num">10/10</div><div class="stat-lbl">Of those, preferred iknowball</div></div>
+      </div>
+    </div>
+
+    <div class="reasons-callout">
+      <p>Asked why, unprompted, the ten who'd played 82-0 converged on the same four reasons:</p>
+      <ul>
+        <li>The explanation of <em>why</em> the score came out the way it did, not just the final number</li>
+        <li>Cards visibly divided by grade/tier instead of one flat list</li>
+        <li>Novelty in the teams themselves: no repeats, where 82-0 was felt to recycle the same rosters</li>
+        <li>A mix that still felt current: enough modern teams that people actually recognized, alongside old-school ones</li>
+      </ul>
     </div>
   </div>
 
