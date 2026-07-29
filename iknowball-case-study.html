@@ -296,8 +296,11 @@
     }
     .stat-grid-bordered {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
+    }
+    @media (max-width: 560px) {
+      .stat-grid-bordered { grid-template-columns: 1fr 1fr; }
     }
     .stat-card-bordered {
       border: 1px solid var(--rule);
