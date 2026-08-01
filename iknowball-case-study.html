@@ -272,53 +272,6 @@
       line-height: 1.6;
     }
 
-    /* ROUND CALLOUT */
-    .round-callout {
-      border: 1.5px solid rgba(210, 105, 30, 0.35);
-      border-radius: 12px;
-      padding: 28px;
-      margin: 32px 0;
-    }
-    .round-callout-head {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-    .round-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .round-n {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-    .round-callout > p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-    .stat-grid-bordered {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 560px) {
-      .stat-grid-bordered { grid-template-columns: 1fr 1fr; }
-    }
-    .stat-card-bordered {
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      padding: 18px 14px;
-      text-align: center;
-    }
-    .stat-card-bordered .stat-num { font-size: 26px; }
-    .stat-card-bordered .stat-lbl { margin-top: 8px; }
-
     /* REASONS CALLOUT */
     .reasons-callout {
       border: 1px solid var(--rule);
@@ -458,7 +411,7 @@
 <div class="case-hero">
   <a href="index.html" class="back-link">← Back to work</a>
   <p class="case-label">Sports · Web Game · Solo Build</p>
-  <h1 class="case-title">Fixing a broken game</h1>
+  <h1 class="case-title">Built, shipped, and still improving</h1>
   <p class="case-subtitle">I enjoyed playing a game until the UX started to frustrate me, so I built and shipped my own version, then kept refining it through real playtester feedback across 15+ shipped improvements.</p>
 
   <img src="iknowball-demo.gif" alt="iknowball gameplay demo: rolling a random team and drafting real NBA players onto a roster" class="hero-demo">
@@ -504,14 +457,6 @@
     <h2 class="section-title">Who I Talked To</h2>
     <div class="section-body">
       <p>Research happened in two rounds. First, four unmoderated interviews (Maddy, Arnold, Justin, and Nicky) spanning basketball knowledge levels from none to expert, testing version 1.0: a simple randomization ticker, a 10-player pool per spin, and an end-of-round breakdown of the score, best pick, and a better alternative. Then, after the first wave of fixes shipped, a 20-person structured playtest run by Kevin and his rec basketball league, the first round with real quantitative data and the first head-to-head test against 82-0 itself.</p>
-    </div>
-
-    <div class="round-callout">
-      <div class="round-callout-head">
-        <span class="round-name">Round 3: Kevin + hoop group</span>
-        <span class="round-n">n = 20</span>
-      </div>
-      <p>A structured playtest run by me for Kevin and 19 of his rec basketball league friends, who actively play fantasy-basketball-style games, including 82-0 itself. This is the first round with real quantitative data instead of individual field notes, and the first time iknowball was tested head-to-head against the named competitor.</p>
     </div>
 
     <div class="reasons-callout">
