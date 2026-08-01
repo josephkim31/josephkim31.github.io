@@ -88,6 +88,14 @@
       margin-bottom: 32px;
     }
 
+    .hero-demo {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--rule);
+      display: block;
+      margin-bottom: 32px;
+    }
+
     /* PLAY CTA ROW */
     .play-row {
       display: flex;
@@ -364,24 +372,7 @@
     .finding ul { margin: 10px 0 0; padding-left: 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
     .finding li { margin-bottom: 6px; }
 
-    /* PROCESS TIMELINE */
-    .p-timeline {
-      position: relative;
-      padding-left: 28px;
-      border-left: 2px solid var(--rule);
-    }
-    .p-case { position: relative; padding-bottom: 40px; }
-    .p-case::before {
-      content: "";
-      position: absolute;
-      left: -34px;
-      top: 4px;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px #FAFAF7, 0 0 0 5px var(--rule);
-    }
+    /* PROCESS STATUS BADGE */
     .p-status {
       display: inline-flex;
       align-items: center;
@@ -396,36 +387,6 @@
     .p-status.shipped { color: #2f8f5b; background: rgba(47, 143, 91, 0.12); }
     .p-status.reverted { color: #b8860b; background: rgba(184, 134, 11, 0.12); }
     .p-status.override { color: #7a4fd1; background: rgba(122, 79, 209, 0.1); }
-    .p-case h3 { font-size: 18px; font-weight: 700; color: var(--text); margin: 0 0 8px; }
-    .p-case p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-    .p-case strong { color: var(--text); }
-    .p-stage-row {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 12px;
-      margin: 6px 0;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .p-stage-label {
-      font-size: 10.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-      padding-top: 2px;
-    }
-    .p-data-callout { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .p-data-chip {
-      font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
-      font-size: 12.5px;
-      color: var(--text);
-      background: #F1EFE9;
-      border: 1px solid var(--rule);
-      border-radius: 6px;
-      padding: 5px 10px;
-    }
-    .p-data-chip b { color: var(--accent); }
 
     /* COMPARE */
     .compare2 {
@@ -449,31 +410,6 @@
     .compare2-col.before .lbl { color: #b8860b; }
     .compare2-col.after .lbl { color: #2f8f5b; }
 
-    /* ROADMAP */
-    .roadmap-list { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
-    .roadmap-item {
-      display: flex;
-      gap: 14px;
-      background: #F1EFE9;
-      border-radius: 8px;
-      padding: 16px 18px;
-      align-items: flex-start;
-    }
-    .roadmap-tag {
-      flex-shrink: 0;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 4px 9px;
-      border-radius: 999px;
-      color: #b8860b;
-      background: rgba(184, 134, 11, 0.12);
-      white-space: nowrap;
-    }
-    .roadmap-tag.new { color: var(--accent); background: rgba(210, 105, 30, 0.1); }
-    .roadmap-item p { margin: 0; font-size: 15px; color: var(--text); }
-    .roadmap-item .who { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
     /* FOOTER */
     .case-footer {
@@ -523,7 +459,9 @@
   <a href="index.html" class="back-link">← Back to work</a>
   <p class="case-label">Sports · Web Game · Solo Build</p>
   <h1 class="case-title">Fixing a broken game</h1>
-  <p class="case-subtitle">I kept getting the same handful of teams and eras every time I played 82-0.com, so I built and shipped my own version instead. This is what happened after real players got their hands on it: four in-depth interviews, a 20-person playtest with basketball enthusiasts, and a running data-accuracy audit that turned into 15 real (and counting), shipped rounds of improvement.</p>
+  <p class="case-subtitle">I enjoyed playing a game until the UX started to frustrate me, so I built and shipped my own version, then kept refining it through real playtester feedback across 15+ shipped improvements.</p>
+
+  <img src="iknowball-demo.gif" alt="iknowball gameplay demo: rolling a random team and drafting real NBA players onto a roster" class="hero-demo">
 
   <div class="play-row">
     <a href="https://iknowballcom.vercel.app" target="_blank" class="play-cta">Play iknowball →</a>
@@ -556,9 +494,7 @@
     <p class="section-tag">Overview</p>
     <h2 class="section-title">Why this project exists</h2>
     <div class="section-body">
-      <p>Sneakers and basketball go hand in hand, and I've always enjoyed draft-and-guess basketball games, the kind where you pull a random real team and see how far you can take it. 82-0.com is the one I kept coming back to, until I noticed the same handful of teams and eras kept showing up over and over, undermining the entire premise of a "random draft" game. So I built my own version and shipped it: iknowball (a play on the modern term), a web game where players draft a 5-man NBA roster one position at a time, pulling from randomly rolled real teams across six decades, then get scored on how that roster would actually perform across an 82-game season.</p>
-      <p>That founding complaint has now come back around twice. The first time, it turned out iknowball had quietly reintroduced the exact repetition problem it was built to fix: teams rotated correctly across games, but decades didn't. The second time, it came from an entirely new, much larger source: a 20-person playtest run by a hoop group who actually know the fantasy-draft genre. They found a narrower version of the same bug, the same team landing on the same decade again almost immediately, even after the first fix had already shipped.</p>
-      <p>This update folds that 20-person round into the original research, and adds everything shipped since: a full rating-accuracy audit (fixing the "decade dilution" pattern this document's earlier draft hadn't yet named), a deliberate one-off rating override, a full restructure of the tier-rating scale, and the second, deeper fix to team/decade repetition. Everything below is organized the way the work actually happened: research first, then cross-cutting findings, then a section-by-section account of what shipped, reverted, or is still on the roadmap, with the real numbers behind each call.</p>
+      <p>Sneakers and basketball go hand in hand, and I've always enjoyed draft-and-guess basketball games, the kind where you pull a random real team and see how far you can take it. 82-0.com is the one I kept coming back to, until the same handful of teams and eras kept showing up over and over, undermining the entire premise of a "random draft" game. So I built and shipped iknowball: draft a 5-man NBA roster one position at a time from randomly rolled real teams across six decades, then get scored on how that roster would perform across an 82-game season.</p>
     </div>
   </div>
 
@@ -567,31 +503,7 @@
     <p class="section-tag">Research</p>
     <h2 class="section-title">Who I Talked To</h2>
     <div class="section-body">
-      <p>Two rounds: four unmoderated deep-dive sessions spanning basketball knowledge levels, then a 20-person structured playtest with people who actually play fantasy-style basketball games for fun.</p>
-      <p>User research and feedback was tested on version 1.0 of iknowball. Version 1.0 consists of a simple ticker for randomization of team/decade, a pool of 10 players for each spin, and an explanation at the end for the score, the best player picked, and an alternative pick that would have been better.</p>
-    </div>
-
-    <div class="persona-grid">
-      <div class="persona-card">
-        <div class="persona-name">Maddy</div>
-        <div class="persona-tag">No basketball knowledge</div>
-        <p>Picks by stats and nicknames since she can't evaluate players on reputation. First to flag that stats were hard to see, and that the "draft this team" click felt repetitive round after round.</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-name">Arnold</div>
-        <div class="persona-tag">Casual knowledge</div>
-        <p>Got visibly stuck. Couldn't tell the team roll was interactive, and didn't realize there was randomization happening until his second spin. The most detailed source on what the interface fails to communicate.</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-name">Justin</div>
-        <div class="persona-tag">Basketball knowledge</div>
-        <p>Evaluated players by role and position need, not just stats, and didn't even notice stats were on the cards at first. Most invested in the scoring model actually making sense.</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-name">Nicky</div>
-        <div class="persona-tag">Basketball knowledge</div>
-        <p>Came back after the first wave of fixes shipped. Focused almost entirely on the scoring model's realism and the team/decade repetition, the founding complaint reappearing independently.</p>
-      </div>
+      <p>Research happened in two rounds. First, four unmoderated interviews (Maddy, Arnold, Justin, and Nicky) spanning basketball knowledge levels from none to expert, testing version 1.0: a simple randomization ticker, a 10-player pool per spin, and an end-of-round breakdown of the score, best pick, and a better alternative. Then, after the first wave of fixes shipped, a 20-person structured playtest run by Kevin and his rec basketball league, the first round with real quantitative data and the first head-to-head test against 82-0 itself.</p>
     </div>
 
     <div class="round-callout">
@@ -600,12 +512,6 @@
         <span class="round-n">n = 20</span>
       </div>
       <p>A structured playtest run by me for Kevin and 19 of his rec basketball league friends, who actively play fantasy-basketball-style games, including 82-0 itself. This is the first round with real quantitative data instead of individual field notes, and the first time iknowball was tested head-to-head against the named competitor.</p>
-      <div class="stat-grid-bordered">
-        <div class="stat-card-bordered"><div class="stat-num">15/20</div><div class="stat-lbl">Understood the mechanics after 1 round</div></div>
-        <div class="stat-card-bordered"><div class="stat-num">20/20</div><div class="stat-lbl">Understood the mechanics by round 3</div></div>
-        <div class="stat-card-bordered"><div class="stat-num">10/20</div><div class="stat-lbl">Had played 82-0 before</div></div>
-        <div class="stat-card-bordered"><div class="stat-num">7/10</div><div class="stat-lbl">Of those, preferred iknowball</div></div>
-      </div>
     </div>
 
     <div class="reasons-callout">
@@ -630,8 +536,8 @@
     <div class="finding">
       <div class="finding-sources"><span class="src-chip">Maddy</span><span class="src-chip">Arnold</span></div>
       <h3>Confusion with game mechanic</h3>
-      <p>The single biggest usability failure in the first round: casual and non-knowledgeable players couldn't tell a randomized event was happening at all.</p>
       <ul>
+        <li>The single biggest usability failure in the first round: casual and non-knowledgeable players couldn't tell a randomized event was happening at all.</li>
         <li>Arnold: couldn't tell he could interact with anything, only realizing he could spin after clicking around, and didn't understand it was a randomization until his <em>second</em> spin.</li>
         <li>Maddy: found clicking "Draft This Team" every round repetitive with no sense of anticipation; suggested the screen "sit on team and decade for 3 seconds."</li>
         <li>Arnold, later: explicitly asked for "more clarity that it is a roll," a literal spin animation, and 3D dice instead of a flat 2D reveal.</li>
@@ -685,9 +591,9 @@
         <li>Confetti / celebration for a good record, a "womp womp" for a bad one.</li>
         <li>Easter eggs, specifically named NBA meme references (Inside the NBA clips, LeBron/Tatum reaction clips).</li>
         <li>"Add dopamine boosters to feel more rewarding for feedback."</li>
-        <li>Kevin's group said the same thing independently, at a much larger sample: "gamify it more," plus three concrete, new mechanic requests (see below) rather than just polish.</li>
+        <li>Kevin's group said the same thing independently, at a much larger sample: "gamify it more," plus three concrete, new mechanic requests rather than just polish.</li>
+        <li><em>Flagged as an IP/right-of-publicity risk: real player photos and named meme clips aren't something I can implement literally as described. Still an open decision.</em></li>
       </ul>
-      <p style="font-size:13px; margin-top:12px;">Flagged as an IP/right-of-publicity risk: real player photos and named meme clips aren't something I can implement literally as described. Noted, still an open decision for me.</p>
     </div>
 
     <div class="finding">
@@ -712,18 +618,18 @@
     <div class="finding">
       <div class="finding-sources"><span class="src-chip new">Kevin's group</span></div>
       <h3>Ratings still don't feel accurate: the "decade dilution" pattern</h3>
-      <p>The clearest, most repeated complaint in the n=20 round, and the one the Process section below leans on most: real stars were showing up rated far below what their actual careers earned, because their listed stat line was quietly averaged across an entire decade instead of reflecting their real peak season.</p>
       <ul>
-        <li>Specific misses flagged this round: <strong>2020s Zion Williamson, 2010s Kyrie Irving, 2000s Jermaine O'Neal</strong>, and a repeat flag on 2020s Jalen Brunson (already fixed by the time this round's notes came in, see the Process section below).</li>
-        <li>The group's own words, twice, independently: <em>"the problem is the decade dilution."</em> That's now the standing name for this bug class in this project.</li>
+        <li>The clearest, most repeated complaint in the n=20 round: real stars were rated far below what their actual careers earned, because their stat line was averaged across an entire decade instead of their real peak season.</li>
+        <li>Specific misses flagged this round: <strong>2020s Zion Williamson, 2010s Kyrie Irving, 2000s Jermaine O'Neal</strong>, and a repeat flag on 2020s Jalen Brunson (already fixed by the time this round's notes came in).</li>
+        <li>The group's own words, twice, independently: <em>"the problem is the decade dilution."</em> Now the standing name for this bug class.</li>
       </ul>
     </div>
 
     <div class="finding">
       <div class="finding-sources"><span class="src-chip new">Kevin's group</span></div>
       <h3>The game needs more meta-game, not just more polish</h3>
-      <p>Distinct from the "delight" wishlist above, these are structural, competitive-loop requests from people who already play games like this seriously.</p>
       <ul>
+        <li>Distinct from the delight wishlist above: structural, competitive-loop requests from people who already play games like this seriously.</li>
         <li>A leaderboard.</li>
         <li>Show the actual odds of rolling a given player/team, rather than leaving the mechanic invisible.</li>
         <li>Make legendary championship-caliber teams roll at lower odds than an average team from the same era. Rarity should track real-world greatness, not just decade.</li>
@@ -734,7 +640,10 @@
     <div class="finding">
       <div class="finding-sources"><span class="src-chip">Arnold</span><span class="src-chip new">Kevin's group</span></div>
       <h3>Difficulty is still calibrated around basketball literacy</h3>
-      <p>Arnold's original struggle with the interface, echoed at n=20: Kevin specifically found the game noticeably harder with older teams, since he doesn't recognize as many of those rosters. Balanced against the group also wanting the game to stay hard ("balance between making it hard but not too easy"), this isn't a request to make old eras easier. It's a request to make sure the difficulty is intentional rather than an accident of which decade got rolled.</p>
+      <ul>
+        <li>Arnold's original struggle with the interface, echoed at n=20: Kevin found the game noticeably harder with older teams he doesn't recognize.</li>
+        <li>The group also wants the game to stay hard ("balance between making it hard but not too easy"). Not a request to make old eras easier, but to make difficulty intentional rather than an accident of which decade got rolled.</li>
+      </ul>
     </div>
   </div>
 
@@ -743,146 +652,86 @@
     <p class="section-tag">Process</p>
     <h2 class="section-title">Research &rarr; decision &rarr; ship</h2>
     <div class="section-body">
-      <p>Each item below moved from a mockup (or several) to a real, verified change: shipped, rejected by real use and reverted, or in one case, deliberately overridden against the formula's own output. Numbers are pulled directly from build verification and simulation, not estimated after the fact.</p>
+      <p>Foundation already in place going into this research: four scoring pillars (Scoring, Rebounding, Defense, Team Chemistry), a rule-based post-game breakdown, tier cards shown only after the draft, and a full 168-roster data audit. Everything below is what changed after real players got their hands on it.</p>
     </div>
 
-    <div class="p-timeline">
-
-      <div class="p-case">
-        <span class="p-status shipped">Shipped</span>
-        <h3>The roll: from a text ticker to a tumbling 3D die</h3>
-        <p>Directly answers Arnold's "more clarity that it is a roll" and "make it dice more 3D." Explored as static mockups before touching production code: a plain casino die, a "team cube" where the six faces were the six candidate teams, and finally the shipped direction: a basketball-textured die that tumbles, flashes a new team/era combo on every face each tick (same decelerating cadence the old text ticker used), then locks on the real result while the existing reveal card drops in beneath it.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Explored</div><div>4 static background treatments &rarr; literal court diagram &rarr; basketball-textured die vs. "team-face" die &rarr; combined die + text-ticker motion</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Shipped</div><div>3D CSS cube (no libraries), Web Animations API-driven tumble, synced to the same 55ms&rarr;230ms decelerating tick the original ticker used</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Caught in build</div><div>Full mockup size (160&times;120px cube) overflowed the viewport by <strong>242px</strong> on first real implementation, the exact same scroll regression a separate court-visual experiment had already been reverted for.</div></div>
-        <div class="p-data-callout">
-          <span class="p-data-chip">first pass: <b>962px</b> content vs <b>720px</b> viewport</span>
-          <span class="p-data-chip">compressed to cube <b>76px</b> &rarr; exact fit</span>
-          <span class="p-data-chip">user asked to see full size &rarr; measured <b>26px</b> desktop / <b>3px</b> mobile overflow</span>
-          <span class="p-data-chip">shipped at full <b>120px</b> cube once overflow was confirmed negligible</span>
-        </div>
-      </div>
-
-      <div class="p-case">
-        <span class="p-status reverted">Explored, reverted</span>
-        <h3>Half-court background and position tracker</h3>
-        <p>Answers Arnold's "make the background like a basketball court" and the request to show positions spatially. Built a half-court diagram with all five draft positions placed on it, replacing the horizontal position-tracker row, filling in with the drafted player's name as picks locked. Shipped, then reverted the same day.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Why reverted</div><div>The court diagram added enough vertical height that the page required scrolling on every single round. "It throws off the balance of the game because you have to scroll now." Reverted fully to the original pill-row tracker.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Salvaged</div><div>The same court asset was repurposed as a one-time decorative background on the Start Game screen only, since that screen appears once instead of once per round, so there's no scroll cost.</div></div>
-      </div>
-
-      <div class="p-case">
-        <span class="p-status shipped">Shipped</span>
-        <h3>Stat legibility: from inline text to standout-highlighted stat blocks</h3>
-        <p>Answers both Maddy ("stats are hard to see") and Justin (didn't notice stats existed). Seven presentation concepts were mocked before building: the current baseline, big-number stat blocks, magnitude bars, icon glyphs, color-intensity "heat pills," a headline-stat-only progressive-disclosure card, and a stat-block-plus-standout-badge combo. The last was chosen.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Shipped</div><div>Each stat gets its own bold number + tiny label; each player's single standout category is computed and called out with a badge ("Rebounder," "Playmaker," "Rim Protector"...) and a highlighted number.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Data source</div><div>The "standout" computation reuses <code>CATEGORY_CEILINGS</code>, the same position-adjusted, real-data-driven ceilings already powering the scoring model, rather than inventing new arbitrary thresholds.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Bug caught in build</div><div>The standout badge overlapped long player names under absolute positioning. Fixed by making name + badge a proper flex row instead.</div></div>
-      </div>
-
-      <div class="p-case">
-        <span class="p-status shipped">Shipped</span>
-        <h3>The founding bug, round one: decades weren't rotating across games</h3>
-        <p>Directly answers the complaint that motivated the whole project, resurfacing independently through Nicky: "likes old school teams, keep it randomized so no repeats." Diagnosis: franchises already had a cross-game rotation (stored locally, cycling through all 30 before any repeat), but <strong>eras had no cross-game memory at all</strong>, only a static weighting toward the 2000s/2010s/2020s. Teams varied; decades didn't.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Fix</div><div>Built the same rotation mechanism for eras that franchises already had: exclude each decade from future rolls once seen, until all six have appeared, then reset.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Verification</div><div>Scripted an 8-game simulation rather than relying on manual play-testing.</div></div>
-        <div class="p-data-callout">
-          <span class="p-data-chip"><b>30/30</b> franchises cycled before any repeat</span>
-          <span class="p-data-chip"><b>6/6</b> eras surfaced every cycle, incl. 1970s/1980s</span>
-          <span class="p-data-chip">1970s prior weight: <b>0.02</b> vs. 2000s-2020s at <b>1.6</b> each</span>
-        </div>
-      </div>
-
-      <div class="p-case">
-        <span class="p-status shipped">Shipped</span>
-        <h3>Animation polish and three bugs it surfaced</h3>
-        <p>A follow-up request to make the die tumble "more 3D" led to a genuinely bug-prone build cycle worth documenting for what it caught, not just what shipped.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Bug 1</div><div>React's StrictMode was double-invoking the roll effect in dev, silently running <strong>two competing animations</strong> on the same die at once. Fixed by cancelling the previous animation on cleanup.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Bug 2</div><div>An added wobble axis occasionally rotated the cube through an orientation where it visually collapsed into a flat "open book" shape. Root cause: interpolating three separate axis rotations between too few, too-large keyframe jumps.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Bug 3</div><div>A more "correct" quaternion-based fix was attempted and introduced a worse bug (the die vanishing entirely at certain frames), so it was rolled back in favor of a simpler, denser-keyframe approach instead.</div></div>
-        <div class="p-data-callout">
-          <span class="p-data-chip">keyframes: <b>6</b> &rarr; 36 (abandoned) &rarr; <b>30</b> (shipped)</span>
-          <span class="p-data-chip">wobble amplitude: <b>24&deg;</b> &rarr; <b>9&deg;</b></span>
-          <span class="p-data-chip">verified by freezing the animation at <b>~15 timestamps</b> across the full 2s roll</span>
-        </div>
-      </div>
-
-      <div class="p-case">
-        <span class="p-status shipped">Shipped, prior round</span>
-        <h3>Foundation work from the round before this research</h3>
-        <p>Context for everything above: already in place by the time the first round of feedback came in, and directly relevant to several findings.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Scoring</div><div>Rebuilt around four named pillars (Scoring, Rebounding, Defense, Team Chemistry) instead of raw stat totals. This is the closest existing answer to Nicky's "more about chemistry, more realistic" ask, though her follow-up ("do we reward players who actually played together") asks for something the current model still doesn't do.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Post-game breakdown</div><div>Rule-based (no paid AI dependency) analysis of weakest category, best pick, and one alternate-pick suggestion. It's the feature Justin connected his own score to, and the single most-praised detail in the n=20 round.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Tier cards</div><div>Player rating shown only on the results screen, never during drafting, to protect the knowledge-test premise.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Data audit</div><div>All 30 teams / 168 team-era rosters checked; 6 real errors found and fixed (wrong-era players, a duplicate entry, a missing Kevin Durant listing).</div></div>
-      </div>
-
-      <div class="p-case">
-        <span class="p-status shipped">Shipped</span>
-        <h3>The rating-accuracy audit: naming and fixing "decade dilution"</h3>
-        <p>The direct response to "should adjust ratings of some players as it doesn't seem accurate," first raised generically, then repeatedly with specific names attached: 90s Reggie Miller, 2010 Joakim Noah, 2020 Paolo Banchero and Cade Cunningham, 2010 LeBron, 2020 Jalen Brunson, 2000 Yao Ming, and eventually Kevin's group's own list. Two root causes were found and fixed, plus a full sweep of individual player entries.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Root cause 1</div><div>Scoring used one universal stat-weight set for every position, so pure scorers (Reggie Miller) were punished for weak rebounding/blocks that were never relevant to their role. Replaced with position-specific weights.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Root cause 2</div><div>A multi-position player (e.g. LeBron, listed PG/SG/SF/PF/C for draft eligibility) was being scored only against his <em>first</em> listed position, the worst possible weight set for his actual game. Fixed to score against whichever listed position rates him highest. LeBron's 2010s Cavaliers entry alone went from 86 to 99 off this fix.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Data pattern</div><div>"Decade dilution": a player's listed stat line was an average across an entire decade of play, including decline years, instead of their real peak or best-representative season. This silently capped stars whose careers had a clear rise-and-fall shape.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Fixed this pass</div><div>~37 individual player entries corrected across two audit sweeps, each verified against real per-season stats: Yao Ming, Tony Parker, Blake Griffin, LaMarcus Aldridge, Manu Ginobili, Nikola Vucevic, Danny Granger, Larry Nance, Vin Baker, Kevin Willis, Tom Chambers, Doug Collins, Buck Williams, Kevin Love (both his Cleveland and Minnesota entries), Scottie Barnes, Evan Mobley, Shai Gilgeous-Alexander's MVP season, and more.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Still open</div><div>Kevin's group's newest examples (2020 Zion Williamson, 2010 Kyrie Irving, 2000 Jermaine O'Neal) are queued for the next pass, not yet fixed as of this writing.</div></div>
-        <div class="p-data-callout">
-          <span class="p-data-chip">example: Yao Ming 2000s, <b>19.5 &rarr; 25.0</b> pts (real 2006-07 peak): Silver &rarr; Gold</span>
-          <span class="p-data-chip">example: Scottie Barnes 2020s, <b>16.5 &rarr; 19.9</b> pts (real 2023-24 season): Silver &rarr; Gold</span>
-          <span class="p-data-chip">~<b>37</b> player entries corrected</span>
-        </div>
-      </div>
-
-      <div class="p-case">
-        <span class="p-status override">Deliberate override</span>
-        <h3>Jalen Brunson: when the formula and reality disagree</h3>
-        <p>Jalen Brunson led the Knicks to their first championship in 50 years and won 2026 Finals MVP. Those are real events, not a hypothetical. His actual career-best regular season (28.7 pts / 3.6 reb / 6.7 ast / 0.9 stl / 0.2 blk, 2023-24) still scores 49.8 under the position-weighted formula, 2.2 points short of the Diamond cutoff, because the point-guard weights lean hard on steals, a stat his game never emphasized.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Precedent</div><div>Every other "formula disagrees with the trophy" case this project has hit (Derrick Rose, Jalen Brunson's own earlier gold rating, Joakim Noah) was left formula-pure, on the stated principle that letting stats override a trophy keeps the game's integrity intact.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">This time</div><div>Given the scale of the real accomplishment, I made the call to manually force this one entry to Diamond (96), a named, commented, single-player exception in the code, not a change to the formula itself.</div></div>
-        <div class="p-data-callout">
-          <span class="p-data-chip">formula score: <b>49.8</b> (Gold)</span>
-          <span class="p-data-chip">manual override: <b>96</b> (Diamond)</span>
-          <span class="p-data-chip">1 of 1 manual overrides in the entire rating system</span>
-        </div>
-      </div>
-
-      <div class="p-case">
-        <span class="p-status shipped">Shipped</span>
-        <h3>Tier-rating restructure: giving each rarity its own lane</h3>
-        <p>A direct request, separate from any single research quote: the rating scale had Silver, Gold, and Diamond all sharing one continuous 40-99 curve, which meant a player who'd only just crossed into Diamond could show as low as 85, barely distinguishable from a strong Gold and nowhere near what a "Diamond" rarity should feel like.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Fix</div><div>Each tier now gets its own fixed, non-overlapping numeric band, proportionally scaled within its own score range rather than the shared curve.</div></div>
-        <div class="p-data-callout">
-          <span class="p-data-chip">Silver: <b>40-79</b></span>
-          <span class="p-data-chip">Gold: <b>80-89</b></span>
-          <span class="p-data-chip">Diamond: <b>90-99</b></span>
-        </div>
-        <div class="compare2" style="margin-top:14px;">
-          <div class="compare2-col before">
-            <span class="lbl">Before</span>
-            One shared 40-99 curve. Lowest real Diamond: <b>85</b>. Highest real Gold: <b>84</b>. Ratings 85-89 were dead space nothing could ever land on.
-          </div>
-          <div class="compare2-col after">
-            <span class="lbl">After</span>
-            Three fixed bands, verified across the full ~1,690-player dataset. Every Diamond is 90+, every Gold tops out at 89, no gaps, no overlap.
-          </div>
-        </div>
-      </div>
-
-      <div class="p-case">
-        <span class="p-status shipped">Shipped</span>
-        <h3>Team/decade repetition, round two: a per-franchise memory</h3>
-        <p>Kevin's group reconfirmed the founding complaint after the first era-rotation fix had already shipped: the same team could still land on the same decade again almost immediately. The original fix tracked era freshness in aggregate; it had no memory that a <em>specific</em> franchise had just appeared as, say, its 1990s roster.</p>
-        <div class="p-stage-row"><div class="p-stage-label">Fix</div><div>Added a lightweight per-franchise memory: whichever era a given team last appeared as gets heavily penalized (not banned) the next time that team is rolled. A single remembered fact per team, not a full rotation, so it can't reproduce the earlier "forced rare era" bug.</div></div>
-        <div class="p-stage-row"><div class="p-stage-label">Verification</div><div>300-game simulation, before vs. after, on the exact production code.</div></div>
-        <div class="p-data-callout">
-          <span class="p-data-chip">same team + same decade, back-to-back games: <b>11 &rarr; 1</b> instance</span>
-          <span class="p-data-chip">same combo within 2 games: <b>33 &rarr; 7</b> instances</span>
-          <span class="p-data-chip">franchise hard-cycle: still <b>0</b> violations, all 30 teams perfectly even</span>
-          <span class="p-data-chip">1970s/80s rarity: unchanged, no regression</span>
-        </div>
-      </div>
-
+    <div class="finding">
+      <span class="p-status shipped">Shipped</span>
+      <h3>The roll: from a text ticker to a tumbling 3D die</h3>
+      <ul>
+        <li>Finding: players couldn't tell a randomized roll was happening at all, especially casual and non-knowledgeable testers.</li>
+        <li>Decision: a basketball-textured 3D die that tumbles through team/era combos before locking on the result, synced to the old ticker's decelerating cadence.</li>
+        <li>A later polish pass fixed three animation bugs it surfaced along the way, tightening wobble amplitude from 24&deg; to 9&deg;.</li>
+      </ul>
     </div>
+
+    <div class="finding">
+      <span class="p-status reverted">Explored, reverted</span>
+      <h3>Half-court background and position tracker</h3>
+      <ul>
+        <li>Explored to answer requests for a court-like background and a spatial (not row-based) position display.</li>
+        <li>Reverted the same day: the added height forced scrolling on every single round, breaking game pacing.</li>
+        <li>Salvaged as a one-time decorative background on the Start Game screen, which only appears once per session.</li>
+      </ul>
+    </div>
+
+    <div class="finding">
+      <span class="p-status shipped">Shipped</span>
+      <h3>Stat legibility: from inline text to standout-highlighted stat blocks</h3>
+      <ul>
+        <li>Finding: stats were hard to see, and one stat-driven tester didn't notice they existed on the card at all.</li>
+        <li>Decision: a bold number and label per stat, plus a computed "standout" badge (Rebounder, Playmaker, Rim Protector...) per player, reusing the same real-data ceilings already powering the scoring model.</li>
+      </ul>
+    </div>
+
+    <div class="finding">
+      <span class="p-status shipped">Shipped</span>
+      <h3>The founding bug: decades weren't rotating across games</h3>
+      <ul>
+        <li>Finding: the exact complaint that started the project, resurfacing. Franchises rotated across games; decades never did.</li>
+        <li>Decision: gave decades the same cross-game rotation logic franchises already had.</li>
+        <li>Verified with an 8-game simulation: 30/30 franchises cycled before repeat, 6/6 eras surfaced every cycle, including the 1970s and 1980s.</li>
+      </ul>
+    </div>
+
+    <div class="finding">
+      <span class="p-status shipped">Shipped</span>
+      <h3>The rating-accuracy audit: naming and fixing "decade dilution"</h3>
+      <ul>
+        <li>Finding: real stars were rated far below their actual careers, because one universal stat-weight formula punished pure scorers for categories outside their role, and a player's listed stat line was averaged across an entire decade instead of their peak season.</li>
+        <li>Decision: position-specific scoring weights, multi-position players scored against their best-fit position, and ~37 player entries corrected across two audit sweeps.</li>
+        <li>Still open: Kevin's group's newest flags (Zion Williamson, Kyrie Irving, Jermaine O'Neal) are queued for the next pass.</li>
+      </ul>
+    </div>
+
+    <div class="finding">
+      <span class="p-status override">Deliberate override</span>
+      <h3>Jalen Brunson: when the formula and reality disagree</h3>
+      <ul>
+        <li>Finding: Brunson's real career-best season (2023-24) scored 49.8, 2.2 points short of Diamond, despite leading the Knicks to a championship and winning Finals MVP.</li>
+        <li>Decision: one manually-forced exception to Diamond (96), the only override in the entire rating system. Every other "formula vs. trophy" disagreement was left formula-pure.</li>
+      </ul>
+    </div>
+
+    <div class="finding">
+      <span class="p-status shipped">Shipped</span>
+      <h3>Tier-rating restructure: giving each rarity its own lane</h3>
+      <ul>
+        <li>Finding: Silver, Gold, and Diamond shared one continuous 40-99 curve, so a fresh Diamond could score as low as 85, barely distinct from a strong Gold.</li>
+        <li>Decision: fixed, non-overlapping bands per tier (Silver 40-79, Gold 80-89, Diamond 90-99), verified across the full ~1,690-player dataset.</li>
+      </ul>
+    </div>
+
+    <div class="finding">
+      <span class="p-status shipped">Shipped</span>
+      <h3>Team/decade repetition, round two: a per-franchise memory</h3>
+      <ul>
+        <li>Finding: Kevin's group reconfirmed the founding complaint even after the first rotation fix. A team could still land on the same decade again almost immediately.</li>
+        <li>Decision: added a lightweight per-franchise memory that heavily penalizes (not bans) a team's most recent era on its next roll.</li>
+        <li>Verified with a 300-game simulation: same team/decade back-to-back dropped from 11 instances to 1, with zero regression to franchise rotation.</li>
+      </ul>
+    </div>
+
   </div>
 
   <!-- DATA -->
@@ -893,7 +742,8 @@
       <div class="stat-item"><div class="stat-num">24</div><div class="stat-lbl">Total research participants</div></div>
       <div class="stat-item"><div class="stat-num">15/20</div><div class="stat-lbl">Grasped mechanics after round 1</div></div>
       <div class="stat-item"><div class="stat-num">20/20</div><div class="stat-lbl">Grasped mechanics by round 3</div></div>
-      <div class="stat-item"><div class="stat-num">7/10</div><div class="stat-lbl">Preferred iknowball over 82-0</div></div>
+      <div class="stat-item"><div class="stat-num">10/20</div><div class="stat-lbl">Had played 82-0 before</div></div>
+      <div class="stat-item"><div class="stat-num">7/10</div><div class="stat-lbl">Of those, preferred iknowball</div></div>
       <div class="stat-item"><div class="stat-num">37</div><div class="stat-lbl">Player ratings corrected</div></div>
       <div class="stat-item"><div class="stat-num">90%</div><div class="stat-lbl">Drop in same team/decade repeats</div></div>
       <div class="stat-item"><div class="stat-num">30</div><div class="stat-lbl">Franchises in rotation, 0 violations</div></div>
@@ -939,119 +789,26 @@
     </div>
   </div>
 
-  <!-- ROADMAP -->
+  <!-- FINAL RESULTS -->
   <div class="section">
-    <p class="section-tag">Open Roadmap</p>
-    <h2 class="section-title">What's still on the list</h2>
+    <p class="section-tag">Final Results</p>
+    <h2 class="section-title">Live, and playable right now</h2>
     <div class="section-body">
-      <p>Not yet built, in the order it's come up. Items new to this round are marked.</p>
+      <p>iknowball is a shipped, live product: real teams across six decades, real per-season stats, and a scoring model that explains itself in plain language after every round.</p>
     </div>
-    <div class="roadmap-list">
-      <div class="roadmap-item">
-        <span class="roadmap-tag new">New</span>
-        <div>
-          <p>Continue the rating-accuracy audit: Kevin's group's newest flags (2020 Zion Williamson, 2010 Kyrie Irving, 2000 Jermaine O'Neal) aren't fixed yet.</p>
-          <div class="who">Kevin's group</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag new">New</span>
-        <div>
-          <p>A leaderboard.</p>
-          <div class="who">Kevin's group</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag new">New</span>
-        <div>
-          <p>Show the actual odds of rolling a given player or team, instead of leaving the mechanic invisible.</p>
-          <div class="who">Kevin's group</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag new">New</span>
-        <div>
-          <p>Weight legendary/championship-caliber teams to roll at lower odds than an average team from the same era.</p>
-          <div class="who">Kevin's group</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag new">New</span>
-        <div>
-          <p>A 1v1 head-to-head mode against another drafted roster.</p>
-          <div class="who">Kevin's group</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Scoring</span>
-        <div>
-          <p>Reward rosters for players who actually played together, not just aggregate stat totals.</p>
-          <div class="who">Nicky</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Feature</span>
-        <div>
-          <p>Starting 5 + ranked bench, instead of a flat 5-player roster, a more knowledgeable framing of roster depth.</p>
-          <div class="who">Nicky</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Pacing</span>
-        <div>
-          <p>Reconsider whether the roll animation runs too long.</p>
-          <div class="who">Nicky</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Visual</span>
-        <div>
-          <p>Simplify the color scheme. Liked overall, but currently feels like too much.</p>
-          <div class="who">Nicky</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Content</span>
-        <div>
-          <p>Bigger player pool, the same gap Justin flagged, independently repeated.</p>
-          <div class="who">Nicky, Justin</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Content</span>
-        <div>
-          <p>Player imagery, flagged for real right-of-publicity/copyright exposure, needs an alternative to literal photos.</p>
-          <div class="who">Justin, Arnold</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Delight</span>
-        <div>
-          <p>A 2K-style transition animation between the last pick and the results screen.</p>
-          <div class="who">Arnold</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Delight</span>
-        <div>
-          <p>Easter eggs / meme references, flagged for the same IP exposure as player photos, needs an original alternative.</p>
-          <div class="who">Arnold</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Copy</span>
-        <div>
-          <p>"Draft from this team" tested clearer than the current "Draft This Team" label.</p>
-          <div class="who">Arnold</div>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <span class="roadmap-tag">Brand</span>
-        <div>
-          <p>A distinct typeface treatment for the "iknowball" wordmark itself.</p>
-          <div class="who">Justin</div>
-        </div>
-      </div>
+    <video src="iknowball-full-demo.mp4" class="hero-demo" controls playsinline></video>
+    <div class="play-row" style="margin-top:24px; margin-bottom:0;">
+      <a href="https://iknowballcom.vercel.app" target="_blank" class="play-cta">Play iknowball →</a>
+    </div>
+  </div>
+
+  <!-- TAKEAWAY -->
+  <div class="section">
+    <p class="section-tag">Takeaway</p>
+    <h2 class="section-title">Noticing the flaw is easy. Shipping the fix is the actual work.</h2>
+    <div class="section-body">
+      <p>Anyone who plays 82-0 could tell you it repeats itself too much. The harder part was building an alternative good enough that real players preferred it, then discovering my own fix had quietly reintroduced a narrower version of the exact bug I built the whole game to solve, and fixing that too.</p>
+      <p><strong>A game you actually play is the best source of product instinct you'll ever have.</strong> I didn't need a research brief to know 82-0 was repetitive. I needed the discipline to build the fix, ship it, and keep listening once real people started playing it.</p>
     </div>
   </div>
 
