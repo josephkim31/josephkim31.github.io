@@ -272,6 +272,47 @@
       line-height: 1.6;
     }
 
+    /* ROUND CALLOUT */
+    .round-callout {
+      border: 1.5px solid rgba(210, 105, 30, 0.35);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 32px 0;
+    }
+    .round-callout-head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .round-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .round-n {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .stat-grid-bordered {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 560px) {
+      .stat-grid-bordered { grid-template-columns: 1fr 1fr; }
+    }
+    .stat-card-bordered {
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 18px 14px;
+      text-align: center;
+    }
+    .stat-card-bordered .stat-num { font-size: 26px; }
+    .stat-card-bordered .stat-lbl { margin-top: 8px; }
+
     /* FINDINGS THEME BLOCKS */
     .finding {
       background: #F1EFE9;
@@ -651,12 +692,24 @@
   <div class="section">
     <p class="section-tag">By the Numbers</p>
     <h2 class="section-title">The data behind the calls</h2>
-    <div class="stat-row" style="margin-top:0;">
+    <div class="stat-row" style="margin-top:0; width:fit-content; grid-template-columns:max-content;">
       <div class="stat-item"><div class="stat-num">24</div><div class="stat-lbl">Total research participants</div></div>
-      <div class="stat-item"><div class="stat-num">15/20</div><div class="stat-lbl">Grasped mechanics after round 1</div></div>
-      <div class="stat-item"><div class="stat-num">20/20</div><div class="stat-lbl">Grasped mechanics by round 3</div></div>
-      <div class="stat-item"><div class="stat-num">10/20</div><div class="stat-lbl">Had played 82-0 before</div></div>
-      <div class="stat-item"><div class="stat-num">7/10</div><div class="stat-lbl">Of those, preferred iknowball</div></div>
+    </div>
+
+    <div class="round-callout">
+      <div class="round-callout-head">
+        <span class="round-name">Round 3: Kevin + hoop group</span>
+        <span class="round-n">n = 20</span>
+      </div>
+      <div class="stat-grid-bordered">
+        <div class="stat-card-bordered"><div class="stat-num">15/20</div><div class="stat-lbl">Grasped mechanics after round 1</div></div>
+        <div class="stat-card-bordered"><div class="stat-num">20/20</div><div class="stat-lbl">Grasped mechanics by round 3</div></div>
+        <div class="stat-card-bordered"><div class="stat-num">10/20</div><div class="stat-lbl">Had played 82-0 before</div></div>
+        <div class="stat-card-bordered"><div class="stat-num">7/10</div><div class="stat-lbl">Of those, preferred iknowball</div></div>
+      </div>
+    </div>
+
+    <div class="stat-row">
       <div class="stat-item"><div class="stat-num">37</div><div class="stat-lbl">Player ratings corrected</div></div>
       <div class="stat-item"><div class="stat-num">90%</div><div class="stat-lbl">Drop in same team/decade repeats</div></div>
       <div class="stat-item"><div class="stat-num">30</div><div class="stat-lbl">Franchises in rotation, 0 violations</div></div>
