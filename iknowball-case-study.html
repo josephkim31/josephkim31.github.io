@@ -484,120 +484,62 @@
     <p class="section-tag">Findings</p>
     <h2 class="section-title">What actually came out of it</h2>
     <div class="section-body">
-      <p>Raw notes, grouped into the themes that repeated across all three rounds. Quotes are lightly cleaned up from shorthand field notes, not paraphrased.</p>
-    </div>
-
-    <div class="finding">
-      <div class="finding-sources"><span class="src-chip">Maddy</span><span class="src-chip">Arnold</span></div>
-      <h3>Confusion with game mechanic</h3>
-      <ul>
-        <li>The single biggest usability failure in the first round: casual and non-knowledgeable players couldn't tell a randomized event was happening at all.</li>
-        <li>Arnold: couldn't tell he could interact with anything, only realizing he could spin after clicking around, and didn't understand it was a randomization until his <em>second</em> spin.</li>
-        <li>Maddy: found clicking "Draft This Team" every round repetitive with no sense of anticipation; suggested the screen "sit on team and decade for 3 seconds."</li>
-        <li>Arnold, later: explicitly asked for "more clarity that it is a roll," a literal spin animation, and 3D dice instead of a flat 2D reveal.</li>
-      </ul>
-    </div>
-
-    <div class="finding">
-      <div class="finding-sources"><span class="src-chip">Maddy</span><span class="src-chip">Justin</span></div>
-      <h3>Stats were present but invisible</h3>
-      <ul>
-        <li>Maddy: "stats are hard to see." She was already relying on them since she couldn't judge players by reputation, and they still weren't legible.</li>
-        <li>Justin, someone who actively evaluates players by stats and role, <strong>didn't notice stats were on the cards at all</strong> in his first pass. "Make that more obvious."</li>
-      </ul>
-    </div>
-
-    <div class="finding">
-      <div class="finding-sources"><span class="src-chip">Arnold</span></div>
-      <h3>Visual identity felt generic</h3>
-      <ul>
-        <li>Wanted a basketball court / hardwood background instead of a blank screen.</li>
-        <li>Wanted player positions shown spatially, not just as a row of pills.</li>
-        <li>Asked for "moments of delight," transitions, and more visual stimulation generally.</li>
-      </ul>
-    </div>
-
-    <div class="finding">
-      <div class="finding-sources"><span class="src-chip">Justin</span><span class="src-chip">Arnold</span><span class="src-chip">Nicky</span><span class="src-chip new">Kevin's group</span></div>
-      <h3>Scoring needs to be transparent, not just present</h3>
-      <ul>
-        <li>Justin liked the post-game breakdown enough to explicitly connect his own score to the feedback he received, proof the explanation was landing.</li>
-        <li>Arnold independently suggested "build a system where it grades off high scores" before learning one already existed.</li>
-        <li>Nicky, in the follow-up round, pushed further, asking: <em>"feedback is just looking at stats though."</em> Do we actually reward players who played together, or only aggregate stat totals the way 82-0 does? She also asked directly whether scoring is "too strict."</li>
-        <li>Kevin's group confirmed this is the single biggest reason people preferred iknowball over 82-0 at all: <strong>20/20 said they enjoyed the end-of-round explanation</strong> of why the score came out the way it did. It's the clearest, most quantified validation this feature has gotten.</li>
-      </ul>
-    </div>
-
-    <div class="finding">
-      <div class="finding-sources"><span class="src-chip">Justin</span><span class="src-chip">Nicky</span></div>
-      <h3>The player pool feels thin</h3>
-      <ul>
-        <li>Justin: wants more players, wants pictures of each player, wants "more imagery and not as much text."</li>
-        <li>Nicky said, independently, "likes bigger pool of players," the same gap Justin had already flagged, unprompted, in a later round.</li>
-      </ul>
-    </div>
-
-    <div class="finding">
-      <div class="finding-sources"><span class="src-chip">Arnold</span><span class="src-chip new">Kevin's group</span></div>
-      <h3>Wants for delight and reward</h3>
-      <ul>
-        <li>A 2K-style animated transition between the last pick and the results screen.</li>
-        <li>Confetti / celebration for a good record, a "womp womp" for a bad one.</li>
-        <li>Easter eggs, specifically named NBA meme references (Inside the NBA clips, LeBron/Tatum reaction clips).</li>
-        <li>"Add dopamine boosters to feel more rewarding for feedback."</li>
-        <li>Kevin's group said the same thing independently, at a much larger sample: "gamify it more," plus three concrete, new mechanic requests rather than just polish.</li>
-        <li><em>Flagged as an IP/right-of-publicity risk: real player photos and named meme clips aren't something I can implement literally as described. Still an open decision.</em></li>
-      </ul>
-    </div>
-
-    <div class="finding">
-      <div class="finding-sources"><span class="src-chip">Arnold</span></div>
-      <h3>Copy clarity</h3>
-      <ul>
-        <li>"Draft from this team" tested clearer than "Draft This Team" as the button label.</li>
-        <li>Wanted more explicit instructions surfaced near the top of the screen.</li>
-      </ul>
+      <p>Key themes that repeated across all three rounds, condensed to the headline finding and who flagged it.</p>
     </div>
 
     <div class="finding">
       <div class="finding-sources"><span class="src-chip">Founding complaint</span><span class="src-chip">Nicky</span><span class="src-chip new">Kevin's group</span></div>
       <h3>Repetition: the reason the project exists, twice over</h3>
-      <ul>
-        <li>The entire premise of iknowball vs. 82-0 was "stop giving me the same teams over and over."</li>
-        <li>Nicky, independently, in the round after the first rotation fix shipped: still getting repeats, specifically calling out decades as well as teams. "Likes old school teams, keep it randomized so no repeats," while also suggesting less weight on eras "we care less about."</li>
-        <li>Kevin's group reconfirmed it again, at n=20, <em>after</em> both the era-rotation fix and further tuning had already shipped: the same team could still land on the same decade again almost immediately. "More randomization of teams so that there are no repetitive teams" and, separately, "makes it more fun when I can try different combos." Variety isn't a nice-to-have here. It's the actual product thesis.</li>
-      </ul>
     </div>
 
     <div class="finding">
       <div class="finding-sources"><span class="src-chip new">Kevin's group</span></div>
       <h3>Ratings still don't feel accurate: the "decade dilution" pattern</h3>
-      <ul>
-        <li>The clearest, most repeated complaint in the n=20 round: real stars were rated far below what their actual careers earned, because their stat line was averaged across an entire decade instead of their real peak season.</li>
-        <li>Specific misses flagged this round: <strong>2020s Zion Williamson, 2010s Kyrie Irving, 2000s Jermaine O'Neal</strong>, and a repeat flag on 2020s Jalen Brunson (already fixed by the time this round's notes came in).</li>
-        <li>The group's own words, twice, independently: <em>"the problem is the decade dilution."</em> Now the standing name for this bug class.</li>
-      </ul>
+    </div>
+
+    <div class="finding">
+      <div class="finding-sources"><span class="src-chip">Maddy</span><span class="src-chip">Arnold</span></div>
+      <h3>Confusion with game mechanic</h3>
+    </div>
+
+    <div class="finding">
+      <div class="finding-sources"><span class="src-chip">Maddy</span><span class="src-chip">Justin</span></div>
+      <h3>Stats were present but invisible</h3>
+    </div>
+
+    <div class="finding">
+      <div class="finding-sources"><span class="src-chip">Arnold</span></div>
+      <h3>Visual identity felt generic</h3>
+    </div>
+
+    <div class="finding">
+      <div class="finding-sources"><span class="src-chip">Justin</span><span class="src-chip">Arnold</span><span class="src-chip">Nicky</span><span class="src-chip new">Kevin's group</span></div>
+      <h3>Scoring needs to be transparent, not just present</h3>
+    </div>
+
+    <div class="finding">
+      <div class="finding-sources"><span class="src-chip">Justin</span><span class="src-chip">Nicky</span></div>
+      <h3>The player pool feels thin</h3>
+    </div>
+
+    <div class="finding">
+      <div class="finding-sources"><span class="src-chip">Arnold</span><span class="src-chip new">Kevin's group</span></div>
+      <h3>Wants for delight and reward</h3>
+    </div>
+
+    <div class="finding">
+      <div class="finding-sources"><span class="src-chip">Arnold</span></div>
+      <h3>Copy clarity</h3>
     </div>
 
     <div class="finding">
       <div class="finding-sources"><span class="src-chip new">Kevin's group</span></div>
       <h3>The game needs more meta-game, not just more polish</h3>
-      <ul>
-        <li>Distinct from the delight wishlist above: structural, competitive-loop requests from people who already play games like this seriously.</li>
-        <li>A leaderboard.</li>
-        <li>Show the actual odds of rolling a given player/team, rather than leaving the mechanic invisible.</li>
-        <li>Make legendary championship-caliber teams roll at lower odds than an average team from the same era. Rarity should track real-world greatness, not just decade.</li>
-        <li>A 1v1 head-to-head mode against another drafted roster, not just a solo 82-game simulation.</li>
-      </ul>
     </div>
 
     <div class="finding">
       <div class="finding-sources"><span class="src-chip">Arnold</span><span class="src-chip new">Kevin's group</span></div>
       <h3>Difficulty is still calibrated around basketball literacy</h3>
-      <ul>
-        <li>Arnold's original struggle with the interface, echoed at n=20: Kevin found the game noticeably harder with older teams he doesn't recognize.</li>
-        <li>The group also wants the game to stay hard ("balance between making it hard but not too easy"). Not a request to make old eras easier, but to make difficulty intentional rather than an accident of which decade got rolled.</li>
-      </ul>
     </div>
   </div>
 
