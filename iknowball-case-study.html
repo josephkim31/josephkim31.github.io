@@ -433,15 +433,6 @@
     </div>
 
     <div class="finding">
-      <h3>Half-court background and position tracker</h3>
-      <ul>
-        <li>Explored to answer requests for a court-like background and a spatial (not row-based) position display.</li>
-        <li>Reverted the same day: the added height forced scrolling on every single round, breaking game pacing.</li>
-        <li>Salvaged as a one-time decorative background on the Start Game screen, which only appears once per session.</li>
-      </ul>
-    </div>
-
-    <div class="finding">
       <h3>Stat legibility: from inline text to standout-highlighted stat blocks</h3>
       <ul>
         <li>Finding: stats were hard to see, and one stat-driven tester didn't notice they existed on the card at all.</li>
@@ -478,23 +469,6 @@
           Same weights still shape ordering within a cycle, but every era is now excluded once seen, guaranteeing all six appear before any repeat, then the cycle resets.
         </div>
       </div>
-    </div>
-
-    <div class="finding">
-      <h3>The rating-accuracy audit: naming and fixing "decade dilution"</h3>
-      <ul>
-        <li>Finding: real stars were rated far below their actual careers, because one universal stat-weight formula punished pure scorers for categories outside their role, and a player's listed stat line was averaged across an entire decade instead of their peak season.</li>
-        <li>Decision: position-specific scoring weights, multi-position players scored against their best-fit position, and ~37 player entries corrected across two audit sweeps.</li>
-        <li>Still open: Kevin's group's newest flags (Zion Williamson, Kyrie Irving, Jermaine O'Neal) are queued for the next pass.</li>
-      </ul>
-    </div>
-
-    <div class="finding">
-      <h3>Jalen Brunson: when the formula and reality disagree</h3>
-      <ul>
-        <li>Finding: Brunson's real career-best season (2023-24) scored 49.8, 2.2 points short of Diamond, despite leading the Knicks to a championship and winning Finals MVP.</li>
-        <li>Decision: one manually-forced exception to Diamond (96), the only override in the entire rating system. Every other "formula vs. trophy" disagreement was left formula-pure.</li>
-      </ul>
     </div>
 
     <div class="finding">
