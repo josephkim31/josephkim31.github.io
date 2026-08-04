@@ -466,6 +466,18 @@
         <li>Decision: gave decades the same cross-game rotation logic franchises already had.</li>
         <li>Verified with an 8-game simulation: 30/30 franchises cycled before repeat, 6/6 eras surfaced every cycle, including the 1970s and 1980s.</li>
       </ul>
+      <h4 style="margin-top:20px; font-size:15px; font-weight:700; color:var(--text);">Era weighting, before the first rotation fix</h4>
+      <p style="font-size:14px; color:var(--muted); margin-top:4px;">Static weights only, no cross-game memory, so the same 2-3 eras dominated every single game regardless of what came before.</p>
+      <div class="compare2">
+        <div class="compare2-col before">
+          <span class="lbl">Before</span>
+          1970s: 0.02 &middot; 1980s: 0.05 &middot; 1990s: 0.6<br />2000s / 2010s / 2020s: 1.6 each<br />No cross-game exclusion for any era.
+        </div>
+        <div class="compare2-col after">
+          <span class="lbl">After</span>
+          Same weights still shape ordering within a cycle, but every era is now excluded once seen, guaranteeing all six appear before any repeat, then the cycle resets.
+        </div>
+      </div>
     </div>
 
     <div class="finding">
@@ -491,6 +503,17 @@
         <li>Finding: Silver, Gold, and Diamond shared one continuous 40-99 curve, so a fresh Diamond could score as low as 85, barely distinct from a strong Gold.</li>
         <li>Decision: fixed, non-overlapping bands per tier (Silver 40-79, Gold 80-89, Diamond 90-99), verified across the full ~1,690-player dataset.</li>
       </ul>
+      <h4 style="margin-top:20px; font-size:15px; font-weight:700; color:var(--text);">Rating scale, before vs. after the tier restructure</h4>
+      <div class="compare2">
+        <div class="compare2-col before">
+          <span class="lbl">Before</span>
+          One shared 40-99 curve. Lowest Diamond in the dataset: <b>85</b>. Highest Gold: <b>84</b>.
+        </div>
+        <div class="compare2-col after">
+          <span class="lbl">After</span>
+          Silver 40-79 &middot; Gold 80-89 &middot; Diamond 90-99. Every tier gets a clean, non-overlapping band.
+        </div>
+      </div>
     </div>
 
     <div class="finding">
@@ -500,6 +523,18 @@
         <li>Decision: added a lightweight per-franchise memory that heavily penalizes (not bans) a team's most recent era on its next roll.</li>
         <li>Verified with a 300-game simulation: same team/decade back-to-back dropped from 11 instances to 1, with zero regression to franchise rotation.</li>
       </ul>
+      <h4 style="margin-top:20px; font-size:15px; font-weight:700; color:var(--text);">Same-franchise repetition, before vs. after round two of the fix</h4>
+      <p style="font-size:14px; color:var(--muted); margin-top:4px;">Measured over an identical 300-game / 1,500-pick simulation on production code.</p>
+      <div class="compare2">
+        <div class="compare2-col before">
+          <span class="lbl">Before</span>
+          A team could repeat its exact last era in the very next game <b>11 times</b> out of ~1,350 combo-repeats observed.
+        </div>
+        <div class="compare2-col after">
+          <span class="lbl">After</span>
+          Down to <b>1</b> instance, a roughly 90% reduction, with zero regression to the franchise hard-cycle or 1970s/80s rarity.
+        </div>
+      </div>
     </div>
 
   </div>
@@ -519,43 +554,6 @@
       <div class="stat-item"><div class="stat-num">168</div><div class="stat-lbl">Team-era rosters audited</div></div>
     </div>
 
-    <h4 style="margin-top:32px; font-size:15px; font-weight:700; color:var(--text);">Era weighting, before the first rotation fix</h4>
-    <p style="font-size:14px; color:var(--muted); margin-top:4px;">Static weights only, no cross-game memory, so the same 2-3 eras dominated every single game regardless of what came before.</p>
-    <div class="compare2">
-      <div class="compare2-col before">
-        <span class="lbl">Before</span>
-        1970s: 0.02 &middot; 1980s: 0.05 &middot; 1990s: 0.6<br />2000s / 2010s / 2020s: 1.6 each<br />No cross-game exclusion for any era.
-      </div>
-      <div class="compare2-col after">
-        <span class="lbl">After</span>
-        Same weights still shape ordering within a cycle, but every era is now excluded once seen, guaranteeing all six appear before any repeat, then the cycle resets.
-      </div>
-    </div>
-
-    <h4 style="margin-top:32px; font-size:15px; font-weight:700; color:var(--text);">Same-franchise repetition, before vs. after round two of the fix</h4>
-    <p style="font-size:14px; color:var(--muted); margin-top:4px;">Measured over an identical 300-game / 1,500-pick simulation on production code.</p>
-    <div class="compare2">
-      <div class="compare2-col before">
-        <span class="lbl">Before</span>
-        A team could repeat its exact last era in the very next game <b>11 times</b> out of ~1,350 combo-repeats observed.
-      </div>
-      <div class="compare2-col after">
-        <span class="lbl">After</span>
-        Down to <b>1</b> instance, a roughly 90% reduction, with zero regression to the franchise hard-cycle or 1970s/80s rarity.
-      </div>
-    </div>
-
-    <h4 style="margin-top:32px; font-size:15px; font-weight:700; color:var(--text);">Rating scale, before vs. after the tier restructure</h4>
-    <div class="compare2">
-      <div class="compare2-col before">
-        <span class="lbl">Before</span>
-        One shared 40-99 curve. Lowest Diamond in the dataset: <b>85</b>. Highest Gold: <b>84</b>.
-      </div>
-      <div class="compare2-col after">
-        <span class="lbl">After</span>
-        Silver 40-79 &middot; Gold 80-89 &middot; Diamond 90-99. Every tier gets a clean, non-overlapping band.
-      </div>
-    </div>
   </div>
 
   <!-- FINAL RESULTS -->
