@@ -272,47 +272,6 @@
       line-height: 1.6;
     }
 
-    /* ROUND CALLOUT */
-    .round-callout {
-      border: 1.5px solid rgba(210, 105, 30, 0.35);
-      border-radius: 12px;
-      padding: 28px;
-      margin: 32px 0;
-    }
-    .round-callout-head {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-    .round-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .round-n {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-    .stat-grid-bordered {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 560px) {
-      .stat-grid-bordered { grid-template-columns: 1fr 1fr; }
-    }
-    .stat-card-bordered {
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      padding: 18px 14px;
-      text-align: center;
-    }
-    .stat-card-bordered .stat-num { font-size: 26px; }
-    .stat-card-bordered .stat-lbl { margin-top: 8px; }
-
     /* FINDINGS THEME BLOCKS */
     .finding {
       background: #F1EFE9;
@@ -359,21 +318,6 @@
     .finding ul { margin: 10px 0 0; padding-left: 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
     .finding li { margin-bottom: 6px; }
 
-    /* PROCESS STATUS BADGE */
-    .p-status {
-      display: inline-flex;
-      align-items: center;
-      font-size: 10.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 3px 10px;
-      border-radius: 999px;
-      margin-bottom: 10px;
-    }
-    .p-status.shipped { color: #2f8f5b; background: rgba(47, 143, 91, 0.12); }
-    .p-status.reverted { color: #b8860b; background: rgba(184, 134, 11, 0.12); }
-    .p-status.override { color: #7a4fd1; background: rgba(122, 79, 209, 0.1); }
 
     /* COMPARE */
     .compare2 {
@@ -570,7 +514,6 @@
     </div>
 
     <div class="finding">
-      <span class="p-status shipped">Shipped</span>
       <h3>The roll: from a text ticker to a tumbling 3D die</h3>
       <ul>
         <li>Finding: players couldn't tell a randomized roll was happening at all, especially casual and non-knowledgeable testers.</li>
@@ -590,7 +533,6 @@
     </div>
 
     <div class="finding">
-      <span class="p-status reverted">Explored, reverted</span>
       <h3>Half-court background and position tracker</h3>
       <ul>
         <li>Explored to answer requests for a court-like background and a spatial (not row-based) position display.</li>
@@ -600,7 +542,6 @@
     </div>
 
     <div class="finding">
-      <span class="p-status shipped">Shipped</span>
       <h3>Stat legibility: from inline text to standout-highlighted stat blocks</h3>
       <ul>
         <li>Finding: stats were hard to see, and one stat-driven tester didn't notice they existed on the card at all.</li>
@@ -619,7 +560,6 @@
     </div>
 
     <div class="finding">
-      <span class="p-status shipped">Shipped</span>
       <h3>The founding bug: decades weren't rotating across games</h3>
       <ul>
         <li>Finding: the exact complaint that started the project, resurfacing. Franchises rotated across games; decades never did.</li>
@@ -629,7 +569,6 @@
     </div>
 
     <div class="finding">
-      <span class="p-status shipped">Shipped</span>
       <h3>The rating-accuracy audit: naming and fixing "decade dilution"</h3>
       <ul>
         <li>Finding: real stars were rated far below their actual careers, because one universal stat-weight formula punished pure scorers for categories outside their role, and a player's listed stat line was averaged across an entire decade instead of their peak season.</li>
@@ -639,7 +578,6 @@
     </div>
 
     <div class="finding">
-      <span class="p-status override">Deliberate override</span>
       <h3>Jalen Brunson: when the formula and reality disagree</h3>
       <ul>
         <li>Finding: Brunson's real career-best season (2023-24) scored 49.8, 2.2 points short of Diamond, despite leading the Knicks to a championship and winning Finals MVP.</li>
@@ -648,7 +586,6 @@
     </div>
 
     <div class="finding">
-      <span class="p-status shipped">Shipped</span>
       <h3>Tier-rating restructure: giving each rarity its own lane</h3>
       <ul>
         <li>Finding: Silver, Gold, and Diamond shared one continuous 40-99 curve, so a fresh Diamond could score as low as 85, barely distinct from a strong Gold.</li>
@@ -657,7 +594,6 @@
     </div>
 
     <div class="finding">
-      <span class="p-status shipped">Shipped</span>
       <h3>Team/decade repetition, round two: a per-franchise memory</h3>
       <ul>
         <li>Finding: Kevin's group reconfirmed the founding complaint even after the first rotation fix. A team could still land on the same decade again almost immediately.</li>
@@ -674,19 +610,6 @@
     <h2 class="section-title">The data behind the calls</h2>
     <div class="stat-row" style="margin-top:0; width:fit-content; grid-template-columns:max-content;">
       <div class="stat-item"><div class="stat-num">24</div><div class="stat-lbl">Total research participants</div></div>
-    </div>
-
-    <div class="round-callout">
-      <div class="round-callout-head">
-        <span class="round-name">Round 3: Kevin + hoop group</span>
-        <span class="round-n">n = 20</span>
-      </div>
-      <div class="stat-grid-bordered">
-        <div class="stat-card-bordered"><div class="stat-num">15/20</div><div class="stat-lbl">Grasped mechanics after round 1</div></div>
-        <div class="stat-card-bordered"><div class="stat-num">20/20</div><div class="stat-lbl">Grasped mechanics by round 3</div></div>
-        <div class="stat-card-bordered"><div class="stat-num">10/20</div><div class="stat-lbl">Had played 82-0 before</div></div>
-        <div class="stat-card-bordered"><div class="stat-num">7/10</div><div class="stat-lbl">Of those, preferred iknowball</div></div>
-      </div>
     </div>
 
     <div class="stat-row">
