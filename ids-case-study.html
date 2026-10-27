@@ -84,7 +84,7 @@
       font-weight: 400;
       color: var(--muted);
       line-height: 1.6;
-      max-width: 640px;
+      max-width: none;
       margin-bottom: 56px;
     }
     .case-subtitle p { margin-bottom: 16px; }
@@ -150,7 +150,11 @@
       display: block;
       border: 1px solid var(--rule);
     }
-    .media-stack { display: grid; gap: 64px; margin-top: 40px; }
+    .media-stack { display: grid; gap: 80px; margin-top: 40px; }
+    .state-group { display: grid; gap: 16px; }
+    .state-group .img-full { margin: 0; }
+    .state-group .media-caption { margin-top: 0; }
+    .state-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
     .media-stack .img-full { margin: 0; }
     .media-caption {
       font-size: 13px;
@@ -159,6 +163,7 @@
       line-height: 1.5;
     }
     .media-block { margin-top: 56px; }
+    .sub-title { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 72px 0 12px; }
     .media-block .media-video { margin-top: 0; }
     .footnote {
       font-size: 13px;
@@ -200,6 +205,7 @@
       .section { margin-bottom: 64px; }
       .media-stack { gap: 40px; margin-top: 32px; }
       .media-block { margin-top: 40px; }
+      .sub-title { margin-top: 48px; }
       .case-meta { grid-template-columns: 1fr 1fr; }
       .case-footer { padding: 40px 24px; flex-direction: column; gap: 20px; text-align: center; }
     }
@@ -247,38 +253,32 @@
 
 <div class="case-content">
 
-  <div style="position:relative;width:100%;aspect-ratio:1.74644;margin:0 0 80px;">
-    <video src="ids-out-of-credits-laptop.mp4" poster="ids-screen-warning.png" autoplay muted loop playsinline preload="metadata" aria-label="The IDS credit warning, the out-of-credits state, and the jump to Plan and Billing" style="position:absolute;left:11.577%;top:6.295%;width:76.846%;height:83.706%;object-fit:cover;background:#0a0b0f;"></video>
-    <img src="ids-laptop-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-  </div>
+  <img src="ids-screen.png" alt="The IDS editor on the Prototypes canvas, with the Valence chat bar at the bottom" class="img-full" style="margin:0 0 80px;">
 
   <!-- 1. WARN -->
   <div class="section">
     <p class="section-tag">01 · Warn</p>
     <h2 class="section-title">Warn people where they already work.</h2>
     <div class="section-body">
-      <p>A small ring in the chat bar shows credits at a glance. At 90%, an amber notification appears with a direct link to get more credits. At the limit, a blocking notification takes over the prompt box and says what happened and what to do next.</p>
+      <p>A small ring in the chat bar shows credits at a glance. At 90%, an amber notification appears with a direct link to get more credits. At the limit, a blocking notification disables the chat box and prompts you to either upgrade, buy more credits, or wait until your limit resets.</p>
     </div>
     <div class="media-stack">
-      <div>
+      <div class="state-group">
+        <p class="state-label">Normal usage</p>
         <img src="ids-chat-ring.png" alt="Chat bar with the usage ring at normal usage" class="img-full">
-        <p class="media-caption">Normal usage: the ring stays quiet.</p>
+        <p class="media-caption">Ring 10% filled.</p>
       </div>
-      <div>
-        <img src="ids-chat-warning.png" alt="Chat bar with the amber approaching-limit notification" class="img-full">
-        <p class="media-caption">90% used: an amber notice with a way to get more credits.</p>
-      </div>
-      <div>
-        <img src="ids-chat-blocked.png" alt="Chat bar blocked because the account is out of credits" class="img-full">
-        <p class="media-caption">Out of credits: the prompt box is replaced by a clear explanation.</p>
-      </div>
-      <div>
+      <div class="state-group">
+        <p class="state-label">90% used</p>
         <img src="ids-screen-warning.png" alt="The editor with the amber credit notice above the chat bar" class="img-full">
-        <p class="media-caption">In the editor, the notice sits right above the prompt, in the user's line of sight.</p>
+        <img src="ids-chat-warning.png" alt="Chat bar with the amber approaching-limit notification" class="img-full">
+        <p class="media-caption">An amber notice sits right above the prompt, with a way to get more credits.</p>
       </div>
-      <div>
+      <div class="state-group">
+        <p class="state-label">Out of credits</p>
         <img src="ids-screen-blocked.png" alt="The editor with the out-of-credits notice above the chat bar" class="img-full">
-        <p class="media-caption">At the limit, the notice stays in the same place, so nothing jumps around.</p>
+        <img src="ids-chat-blocked.png" alt="Chat bar blocked because the account is out of credits" class="img-full">
+        <p class="media-caption">The notice stays in the same place, so nothing jumps around, and the prompt box is replaced by a clear explanation.</p>
       </div>
     </div>
   </div>
@@ -306,13 +306,34 @@
     <div class="section-body">
       <p>After checkout, people need proof it worked. Credits count up to the new total and a "+N credits added" chip confirms the amount. Upgrading to Pro adds a check and a shimmer to the plan card. All of it respects reduced-motion settings.</p>
     </div>
+    <h3 class="sub-title">Buying a subscription</h3>
+    <div class="section-body">
+      <p>Upgrading to Pro gives the plan card the "Current plan" mark with a check and a shimmer, and the monthly allowance lands in the balance.</p>
+    </div>
+    <div class="media-block" style="margin-top:32px;">
+      <video class="media-video" src="ids-loop-plan.mp4" autoplay muted loop playsinline></video>
+      <p class="media-caption">The "Current plan" mark moves from Starter to IDS Pro, with a check and a shimmer.</p>
+    </div>
     <div class="media-block">
-      <video class="media-video" src="ids-top-up.mp4" autoplay muted loop playsinline controls></video>
-      <p class="media-caption"><strong>Top up credits.</strong> A one-time purchase: the balance counts up from zero and a "+200 credits added" chip confirms it.</p>
+      <video class="media-video" src="ids-loop-subscription.mp4" autoplay muted loop playsinline></video>
+      <p class="media-caption">The balance counts up to the new total, with a "+1,000 credits added" chip.</p>
     </div>
     <div class="media-block">
       <video class="media-video" src="ids-subscription.mp4" autoplay muted loop playsinline controls></video>
-      <p class="media-caption"><strong>Upgrade to Pro.</strong> The plan card takes the "Current plan" mark with a check and a shimmer, and the monthly allowance appears in the balance.</p>
+      <p class="media-caption"><strong>Upgrade to Pro.</strong> From the plan card, through checkout (sped up), to the confirmation.</p>
+    </div>
+
+    <h3 class="sub-title">Buying credits</h3>
+    <div class="section-body">
+      <p>A top-up is a one-time purchase for people who don't want a subscription. The balance counts up from zero and a chip confirms the amount.</p>
+    </div>
+    <div class="media-block" style="margin-top:32px;">
+      <video class="media-video" src="ids-loop-credits.mp4" autoplay muted loop playsinline></video>
+      <p class="media-caption">The balance counts up, with a "+200 credits added" chip.</p>
+    </div>
+    <div class="media-block">
+      <video class="media-video" src="ids-top-up.mp4" autoplay muted loop playsinline controls></video>
+      <p class="media-caption"><strong>Top up credits.</strong> From the credits row, through checkout (sped up), to the confirmation.</p>
     </div>
   </div>
 
