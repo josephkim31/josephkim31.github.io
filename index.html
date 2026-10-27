@@ -367,6 +367,7 @@
         0 0 0 1px rgba(0, 0, 0, 0.04);
     }
 
+
     /* Desktop mockup project card */
     .project-visual-desktop {
       display: flex;
@@ -511,8 +512,19 @@
     </div>
         <div class="carousel" id="hero-carousel">
 
-      <!-- Slide: iknowball -->
+      <!-- Slide: IDS -->
       <div class="slide slide--light active">
+        <div class="slide-laptop">
+          <img src="ids-laptop-still.png" alt="The IDS editor on a laptop, with a credit warning above the chat bar">
+        </div>
+        <div class="slide-meta">
+          <span class="slide-name">IDS</span>
+          <span class="slide-tag">Credits &amp; Plans</span>
+        </div>
+      </div>
+
+      <!-- Slide: iknowball -->
+      <div class="slide slide--light">
         <div class="slide-phones">
           <img src="iknowball-phone-draftboard.png" alt="iknowball player selection screen on a phone">
         </div>
@@ -533,17 +545,6 @@
         </div>
       </div>
 
-      <!-- Slide: Parry — Dispute Email -->
-      <div class="slide slide--light">
-        <div class="slide-laptop">
-          <img src="parry-email-hero.png" alt="Parry dispute email notification">
-        </div>
-        <div class="slide-meta">
-          <span class="slide-name">Parry</span>
-          <span class="slide-tag">Dispute Coach Prototype</span>
-        </div>
-      </div>
-
       <div class="carousel-progress">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
@@ -558,6 +559,26 @@
     <!-- WORK -->
   <section class="work" id="work">
     <p class="section-label">Selected Work</p>
+
+    <!-- Project: IDS credits and plans -->
+    <article class="project project-sole">
+      <div class="project-sole-grid">
+        <div class="project-info">
+          <h2 class="project-headline">
+            Designing the subscription and upgrade experience for an AI design tool.
+          </h2>
+          <p class="project-tags">SaaS &bull; Product Design &bull; AI</p>
+          <p class="project-meta"><strong>IDS</strong> &bull; Product Designer &bull; 2026</p>
+          <a href="ids-case-study.html" class="project-link">View case study &rarr;</a>
+        </div>
+        <div class="project-sole-image">
+          <a href="ids-case-study.html" style="display:block;position:relative;width:100%;aspect-ratio:1.74644;transition:transform 0.4s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+            <video src="ids-out-of-credits-laptop.mp4" poster="ids-screen-warning.png" autoplay muted loop playsinline preload="metadata" aria-label="The IDS credit warning, the out-of-credits state, and the jump to Plan and Billing" style="position:absolute;left:11.577%;top:6.295%;width:76.846%;height:83.706%;object-fit:cover;background:#0a0b0f;"></video>
+            <img src="ids-laptop-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+          </a>
+        </div>
+      </div>
+    </article>
 
     <!-- Project: iknowball -->
     <article class="project project-sole">
@@ -593,25 +614,6 @@
         <div class="project-sole-image">
           <a href="aquaintegrity-case-study.html" style="background:#FAFAF7;display:block;">
             <img src="aqua-laptop.png" alt="Aqua Integrity Pool Services" style="width:100%;display:block;border-radius:4px;mix-blend-mode:multiply;">
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Project: Parry -->
-    <article class="project project-sole">
-      <div class="project-sole-grid">
-        <div class="project-info">
-          <h2 class="project-headline">
-            Designing an AI-powered dispute coach that helps merchants understand and respond to payment chargebacks in plain language.
-          </h2>
-          <p class="project-tags">Fintech &bull; Product Design &bull; AI</p>
-          <p class="project-meta"><strong>Parry</strong> &bull; End-to-End Design &bull; 2026</p>
-          <a href="parry-case-study.html" class="project-link">View case study &rarr;</a>
-        </div>
-        <div class="project-sole-image">
-          <a href="parry-case-study.html">
-            <img src="parry-hero.png" alt="Parry dispute coach dashboard" style="width:100%;display:block;border-radius:4px;">
           </a>
         </div>
       </div>

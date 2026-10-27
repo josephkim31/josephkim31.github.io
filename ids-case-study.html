@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5TWD0CYMD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H5TWD0CYMD');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designing the moment credits run out · Joseph Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FAFAF7;
+      --text: #1A1A1A;
+      --muted: #6E6E6A;
+      --accent: #5B4FE5;
+      --rule: #E6E4DE;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Geist', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+    nav { display: flex; gap: 40px; }
+    nav a { font-size: 14px; color: var(--text); transition: color 0.2s; }
+    nav a:hover { color: var(--accent); }
+
+    /* HERO */
+    .case-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 96px 64px 80px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 48px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+    .case-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .case-title {
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+    .case-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+    .case-subtitle p { margin-bottom: 16px; }
+    .case-subtitle p:last-child { margin-bottom: 0; }
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      padding-top: 40px;
+      border-top: 1px solid var(--rule);
+    }
+    .meta-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .meta-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* CONTENT */
+    .case-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 64px 120px;
+    }
+    .section { margin-bottom: 96px; }
+    .section-tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .section-body {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 680px;
+    }
+    .section-body p { margin-bottom: 16px; }
+    .section-body p:last-child { margin-bottom: 0; }
+
+    /* MEDIA */
+    .img-full, .media-video {
+      width: 100%;
+      border-radius: 8px;
+      margin: 32px 0 0;
+      display: block;
+      border: 1px solid var(--rule);
+    }
+    .media-stack { display: grid; gap: 64px; margin-top: 40px; }
+    .media-stack .img-full { margin: 0; }
+    .media-caption {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+    .media-block { margin-top: 56px; }
+    .media-block .media-video { margin-top: 0; }
+    .footnote {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      max-width: 680px;
+    }
+
+    /* FOOTER */
+    .case-footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 64px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .case-footer p { font-size: 13px; color: var(--muted); }
+    .footer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      border: 1px solid var(--rule);
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .footer-cta:hover { color: var(--accent); border-color: var(--accent); }
+
+    @media (max-width: 768px) {
+      header { padding: 20px 24px; }
+      .case-hero, .case-content { padding-left: 24px; padding-right: 24px; }
+      .section { margin-bottom: 64px; }
+      .media-stack { gap: 40px; margin-top: 32px; }
+      .media-block { margin-top: 40px; }
+      .case-meta { grid-template-columns: 1fr 1fr; }
+      .case-footer { padding: 40px 24px; flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Joseph Kim</a>
+  <nav>
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="resume.pdf" target="_blank">Resume</a>
+  </nav>
+</header>
+
+<div class="case-hero">
+  <a href="index.html" class="back-link">← Back to work</a>
+  <p class="case-label">SaaS · Product Design · AI</p>
+  <h1 class="case-title">Designing the moment credits run out</h1>
+  <div class="case-subtitle">
+    <p>IDS is a design system editor from Ionic Studio. Designers build tokens, components and prototypes in it, and work with an AI assistant called Valence in a chat bar.</p>
+    <p>IDS had no way to tell you when your credits were running out, or what to do about it. I was brought in to design that experience from scratch: how usage shows up, what happens at the limit, how people upgrade, and how they know it worked.</p>
+    <p>The main interaction in IDS happens in the chat, so that's where the experience lives: the warnings, the limit, and the way to get more.</p>
+  </div>
+  <div class="case-meta">
+    <div class="meta-item">
+      <p class="meta-label">Project Type</p>
+      <p class="meta-value">Product team project</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Role</p>
+      <p class="meta-value">Product Designer</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Tools</p>
+      <p class="meta-value">Figma, Claude Code</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Timeframe</p>
+      <p class="meta-value">Sept – Oct 2026</p>
+    </div>
+  </div>
+</div>
+
+<div class="case-content">
+
+  <div style="position:relative;width:100%;aspect-ratio:1.74644;margin:0 0 80px;">
+    <video src="ids-out-of-credits-laptop.mp4" poster="ids-screen-warning.png" autoplay muted loop playsinline preload="metadata" aria-label="The IDS credit warning, the out-of-credits state, and the jump to Plan and Billing" style="position:absolute;left:11.577%;top:6.295%;width:76.846%;height:83.706%;object-fit:cover;background:#0a0b0f;"></video>
+    <img src="ids-laptop-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+  </div>
+
+  <!-- 1. WARN -->
+  <div class="section">
+    <p class="section-tag">01 · Warn</p>
+    <h2 class="section-title">Warn people where they already work.</h2>
+    <div class="section-body">
+      <p>A small ring in the chat bar shows credits at a glance. At 90%, an amber notification appears with a direct link to get more credits. At the limit, a blocking notification takes over the prompt box and says what happened and what to do next.</p>
+    </div>
+    <div class="media-stack">
+      <div>
+        <img src="ids-chat-ring.png" alt="Chat bar with the usage ring at normal usage" class="img-full">
+        <p class="media-caption">Normal usage: the ring stays quiet.</p>
+      </div>
+      <div>
+        <img src="ids-chat-warning.png" alt="Chat bar with the amber approaching-limit notification" class="img-full">
+        <p class="media-caption">90% used: an amber notice with a way to get more credits.</p>
+      </div>
+      <div>
+        <img src="ids-chat-blocked.png" alt="Chat bar blocked because the account is out of credits" class="img-full">
+        <p class="media-caption">Out of credits: the prompt box is replaced by a clear explanation.</p>
+      </div>
+      <div>
+        <img src="ids-screen-warning.png" alt="The editor with the amber credit notice above the chat bar" class="img-full">
+        <p class="media-caption">In the editor, the notice sits right above the prompt, in the user's line of sight.</p>
+      </div>
+      <div>
+        <img src="ids-screen-blocked.png" alt="The editor with the out-of-credits notice above the chat bar" class="img-full">
+        <p class="media-caption">At the limit, the notice stays in the same place, so nothing jumps around.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. TWO WAYS -->
+  <div class="section">
+    <p class="section-tag">02 · Choose</p>
+    <h2 class="section-title">Two ways to keep going.</h2>
+    <div class="section-body">
+      <p>From the notification, users land on Plan &amp; Billing and choose how to continue. They can upgrade the plan for a monthly allowance, or top up credits once without subscribing. Both plans are always visible with the current one marked, so it reads as a comparison, not a leap.</p>
+      <p>A "Back to" button returns them to the work they left, so settings feels like a detour and not a destination.</p>
+    </div>
+    <div class="media-block">
+      <video class="media-video" src="ids-out-of-credits.mp4" autoplay muted loop playsinline controls></video>
+      <p class="media-caption">From the amber warning, to running out, to Plan &amp; Billing in one click.</p>
+    </div>
+    <img src="ids-plan-billing.png" alt="Plan and Billing page showing the Starter and Pro plans and two top-up options" class="img-full">
+    <p class="media-caption">Plan &amp; Billing: plans, credits, and top-ups on one page.</p>
+  </div>
+
+  <!-- 3. CONFIRM -->
+  <div class="section">
+    <p class="section-tag">03 · Confirm</p>
+    <h2 class="section-title">Confirm it, and make it feel good.</h2>
+    <div class="section-body">
+      <p>After checkout, people need proof it worked. Credits count up to the new total and a "+N credits added" chip confirms the amount. Upgrading to Pro adds a check and a shimmer to the plan card. All of it respects reduced-motion settings.</p>
+    </div>
+    <div class="media-block">
+      <video class="media-video" src="ids-top-up.mp4" autoplay muted loop playsinline controls></video>
+      <p class="media-caption"><strong>Top up credits.</strong> A one-time purchase: the balance counts up from zero and a "+200 credits added" chip confirms it.</p>
+    </div>
+    <div class="media-block">
+      <video class="media-video" src="ids-subscription.mp4" autoplay muted loop playsinline controls></video>
+      <p class="media-caption"><strong>Upgrade to Pro.</strong> The plan card takes the "Current plan" mark with a check and a shimmer, and the monthly allowance appears in the balance.</p>
+    </div>
+  </div>
+
+  <!-- FULL FLOW -->
+  <div class="section">
+    <p class="section-tag">Full flow</p>
+    <h2 class="section-title">From the first warning to the confirmation.</h2>
+    <video class="media-video" src="ids-end-to-end.mp4" autoplay muted loop playsinline controls></video>
+    <p class="footnote">The payment flow is simulated for the prototype. The checkout runs in a sandbox, and personal details in the recordings are blurred.</p>
+  </div>
+
+  <!-- OUTCOME -->
+  <div class="section">
+    <p class="section-tag">Outcome</p>
+    <h2 class="section-title">A complete credit and billing experience.</h2>
+    <div class="section-body">
+      <p>IDS now has a complete credit and billing experience, from the first warning to the confirmation.</p>
+      <p>I built two versions of the flow: one with settings as a modal, and one with settings as a page. After reviewing both, the team chose the page. They are still finishing the app, and a beta is planned for the end of the year.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="case-footer">
+  <p>© 2026 Joseph Kim</p>
+  <a href="index.html" class="footer-cta">← Back to work</a>
+</div>
+
+</body>
+</html>
