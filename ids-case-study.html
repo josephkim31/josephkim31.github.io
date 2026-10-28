@@ -163,6 +163,11 @@
       line-height: 1.5;
     }
     .media-block { margin-top: 56px; }
+    .pb-wrap { position: relative; margin-top: 32px; }
+    .pb-wrap .img-full { margin: 0; }
+    .pin { position: absolute; left: 57.5%; transform: translateY(-50%); display: flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: clamp(10px, 1.7vw, 13px); font-weight: 500; padding: 5px 12px 5px 5px; border-radius: 999px; white-space: nowrap; }
+    .pin::before { content: ""; position: absolute; right: 100%; top: 50%; width: 2.5vw; max-width: 20px; height: 1.5px; background: var(--accent); }
+    .pin b { display: inline-flex; align-items: center; justify-content: center; width: 1.7em; height: 1.7em; border-radius: 50%; background: rgba(255,255,255,0.22); font-weight: 600; }
     .sub-title { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 72px 0 12px; }
     .media-block .media-video { margin-top: 0; }
     .footnote {
@@ -227,9 +232,9 @@
   <p class="case-label">SaaS · Product Design · AI</p>
   <h1 class="case-title">Designing the moment credits run out</h1>
   <div class="case-subtitle">
-    <p>IDS is a design system editor from Ionic Studio. Designers build tokens, components and prototypes in it, and work with an AI assistant called Valence in a chat bar.</p>
-    <p>IDS had no way to tell you when your credits were running out, or what to do about it. I was brought in to design that experience from scratch: how usage shows up, what happens at the limit, how people upgrade, and how they know it worked.</p>
-    <p>The main interaction in IDS happens in the chat, so that's where the experience lives: the warnings, the limit, and the way to get more.</p>
+    <p>Valence is a design editor from Ionic Studio. Designers build tokens, components and prototypes in it, and work with an AI assistant, also called Valence, in a chat bar. Each prompt uses credits, and when they run out the chat stops.</p>
+    <p>Valence had no way to tell you when your credits were running out, or what to do about it. Working directly with the founders and engineers, I designed that experience from scratch in Figma, then built it in the working app myself using Claude Code: how usage shows up, what happens at the limit, how people subscribe or buy more credits, and how they know it worked.</p>
+    <p>The main interaction happens in the chat, so that's where the experience lives.</p>
   </div>
   <div class="case-meta">
     <div class="meta-item">
@@ -253,7 +258,7 @@
 
 <div class="case-content">
 
-  <img src="ids-screen.png" alt="The IDS editor on the Prototypes canvas, with the Valence chat bar at the bottom" class="img-full" style="margin:0 0 80px;">
+  <video class="media-video" src="ids-end-to-end.mp4" autoplay muted loop playsinline controls style="margin:0 0 80px;"></video>
 
   <!-- 1. WARN -->
   <div class="section">
@@ -270,13 +275,11 @@
       </div>
       <div class="state-group">
         <p class="state-label">90% used</p>
-        <img src="ids-screen-warning.png" alt="The editor with the amber credit notice above the chat bar" class="img-full">
         <img src="ids-chat-warning.png" alt="Chat bar with the amber approaching-limit notification" class="img-full">
         <p class="media-caption">An amber notice sits right above the prompt, with a way to get more credits.</p>
       </div>
       <div class="state-group">
         <p class="state-label">Out of credits</p>
-        <img src="ids-screen-blocked.png" alt="The editor with the out-of-credits notice above the chat bar" class="img-full">
         <img src="ids-chat-blocked.png" alt="Chat bar blocked because the account is out of credits" class="img-full">
         <p class="media-caption">The notice stays in the same place, so nothing jumps around, and the prompt box is replaced by a clear explanation.</p>
       </div>
@@ -288,52 +291,37 @@
     <p class="section-tag">02 · Choose</p>
     <h2 class="section-title">Two ways to keep going.</h2>
     <div class="section-body">
-      <p>From the notification, users land on Plan &amp; Billing and choose how to continue. They can upgrade the plan for a monthly allowance, or top up credits once without subscribing. Both plans are always visible with the current one marked, so it reads as a comparison, not a leap.</p>
-      <p>A "Back to" button returns them to the work they left, so settings feels like a detour and not a destination.</p>
+      <p>From the notice, people land on Plan &amp; Billing with two ways to keep going: subscribe to Pro, or buy credits.</p>
     </div>
-    <div class="media-block">
-      <video class="media-video" src="ids-out-of-credits.mp4" autoplay muted loop playsinline controls></video>
-      <p class="media-caption">From the amber warning, to running out, to Plan &amp; Billing in one click.</p>
+    <div class="media-block" style="margin-top:32px;">
+      <div class="pb-wrap">
+        <img src="ids-plan-billing.png" alt="Plan and Billing page showing the Starter and Pro plans and two top-up options" class="img-full">
+        <span class="pin" style="top:44.9%;"><b>1</b>Subscribe to Pro</span>
+        <span class="pin" style="top:90.8%;"><b>2</b>Buy credits</span>
+      </div>
+      <p class="media-caption">Plan &amp; Billing: subscribe to Pro, or buy credits.</p>
     </div>
-    <img src="ids-plan-billing.png" alt="Plan and Billing page showing the Starter and Pro plans and two top-up options" class="img-full">
-    <p class="media-caption">Plan &amp; Billing: plans, credits, and top-ups on one page.</p>
-  </div>
 
-  <!-- 3. CONFIRM -->
-  <div class="section">
-    <p class="section-tag">03 · Confirm</p>
-    <h2 class="section-title">Confirm it, and make it feel good.</h2>
+    <h3 class="sub-title">1 · Subscribe to Pro</h3>
     <div class="section-body">
-      <p>After checkout, people need proof it worked. Credits count up to the new total and a "+N credits added" chip confirms the amount. Upgrading to Pro adds a check and a shimmer to the plan card. All of it respects reduced-motion settings.</p>
-    </div>
-    <h3 class="sub-title">Buying a subscription</h3>
-    <div class="section-body">
-      <p>Upgrading to Pro gives the plan card the "Current plan" mark with a check and a shimmer, and the monthly allowance lands in the balance.</p>
+      <p>Pro is $20 a month and includes 1,000 credits. When the purchase lands, the plan card takes the "Current plan" mark with a check and a shimmer, and the balance counts up.</p>
     </div>
     <div class="media-block" style="margin-top:32px;">
       <video class="media-video" src="ids-loop-plan.mp4" autoplay muted loop playsinline></video>
-      <p class="media-caption">The "Current plan" mark moves from Starter to IDS Pro, with a check and a shimmer.</p>
+      <p class="media-caption">The "Current plan" mark moves from Starter to Pro, with a check and a shimmer.</p>
     </div>
     <div class="media-block">
       <video class="media-video" src="ids-loop-subscription.mp4" autoplay muted loop playsinline></video>
       <p class="media-caption">The balance counts up to the new total, with a "+1,000 credits added" chip.</p>
     </div>
-    <div class="media-block">
-      <video class="media-video" src="ids-subscription.mp4" autoplay muted loop playsinline controls></video>
-      <p class="media-caption"><strong>Upgrade to Pro.</strong> From the plan card, through checkout (sped up), to the confirmation.</p>
-    </div>
 
-    <h3 class="sub-title">Buying credits</h3>
+    <h3 class="sub-title">2 · Buy credits</h3>
     <div class="section-body">
-      <p>A top-up is a one-time purchase for people who don't want a subscription. The balance counts up from zero and a chip confirms the amount.</p>
+      <p>A top-up is a one-time purchase for people who don't want a subscription: 200 or 1,000 credits that carry over. The balance counts up and a chip confirms the amount.</p>
     </div>
     <div class="media-block" style="margin-top:32px;">
       <video class="media-video" src="ids-loop-credits.mp4" autoplay muted loop playsinline></video>
       <p class="media-caption">The balance counts up, with a "+200 credits added" chip.</p>
-    </div>
-    <div class="media-block">
-      <video class="media-video" src="ids-top-up.mp4" autoplay muted loop playsinline controls></video>
-      <p class="media-caption"><strong>Top up credits.</strong> From the credits row, through checkout (sped up), to the confirmation.</p>
     </div>
   </div>
 
@@ -350,7 +338,7 @@
     <p class="section-tag">Outcome</p>
     <h2 class="section-title">A complete credit and billing experience.</h2>
     <div class="section-body">
-      <p>IDS now has a complete credit and billing experience, from the first warning to the confirmation.</p>
+      <p>Valence now has a complete credit and billing experience, from the first warning to the confirmation.</p>
       <p>I built two versions of the flow: one with settings as a modal, and one with settings as a page. After reviewing both, the team chose the page. They are still finishing the app, and a beta is planned for the end of the year.</p>
     </div>
   </div>
