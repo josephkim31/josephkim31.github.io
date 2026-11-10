@@ -235,11 +235,12 @@
     <p>Valence is a design editor from Ionic Studio. Designers build tokens, components and prototypes in it, and work with an AI assistant, also called Valence, in a chat bar. Each prompt uses credits, and when they run out the chat stops.</p>
     <p>Valence had no way to tell you when your credits were running out, or what to do about it. Working directly with the founders and engineers, I designed that experience from scratch in Figma, then built it in the working app myself using Claude Code: how usage shows up, what happens at the limit, how people subscribe or buy more credits, and how they know it worked.</p>
     <p>The main interaction happens in the chat, so that's where the experience lives.</p>
+    <p><strong>Research:</strong> I ran a competitive analysis first. Figma Make was the closest comparable, and Claude Code's soft degradation became the pattern for easing people toward the limit.</p>
   </div>
   <div class="case-meta">
     <div class="meta-item">
-      <p class="meta-label">Project Type</p>
-      <p class="meta-value">Product team project</p>
+      <p class="meta-label">Team</p>
+      <p class="meta-value">Founders &amp; engineers, built in the live app</p>
     </div>
     <div class="meta-item">
       <p class="meta-label">Role</p>
@@ -271,12 +272,12 @@
       <div class="state-group">
         <p class="state-label">Normal usage</p>
         <img src="ids-chat-ring.png" alt="Chat bar with the usage ring at normal usage" class="img-full">
-        <p class="media-caption">Ring 10% filled.</p>
+        <p class="media-caption">Ring 10% filled. Why a ring in the chat bar: it is where people already look, so usage is visible without a banner or an email.</p>
       </div>
       <div class="state-group">
         <p class="state-label">90% used</p>
         <img src="ids-chat-warning.png" alt="Chat bar with the amber approaching-limit notification" class="img-full">
-        <p class="media-caption">An amber notice sits right above the prompt, with a way to get more credits.</p>
+        <p class="media-caption">An amber notice sits right above the prompt, with a way to get more credits. Why 90%: late enough to avoid nagging, early enough to act before work is interrupted.</p>
       </div>
       <div class="state-group">
         <p class="state-label">Out of credits</p>
@@ -299,7 +300,7 @@
         <span class="pin" style="top:44.9%;"><b>1</b>Subscribe to Pro</span>
         <span class="pin" style="top:90.8%;"><b>2</b>Buy credits</span>
       </div>
-      <p class="media-caption">Plan &amp; Billing: subscribe to Pro, or buy credits.</p>
+      <p class="media-caption">Plan &amp; Billing: subscribe to Pro, or buy credits. Why both: regular users want a subscription, while occasional users want one-time credits without commitment.</p>
     </div>
 
     <h3 class="sub-title">1 · Subscribe to Pro</h3>
@@ -339,7 +340,7 @@
     <h2 class="section-title">A complete credit and billing experience.</h2>
     <div class="section-body">
       <p>Valence now has a complete credit and billing experience, from the first warning to the confirmation.</p>
-      <p>I built two versions of the flow: one with settings as a modal, and one with settings as a page. After reviewing both, the team chose the page. They are still finishing the app, and a beta is planned for the end of the year.</p>
+      <p>I built two versions of the flow: one with settings as a modal, and one with settings as a page. After reviewing both, the team chose the page. We didn't want pop-ups on top of pop-ups, so the page kept the experience consistent and clean. They are still finishing the app, and a beta is planned for the end of the year.</p>
     </div>
   </div>
 
